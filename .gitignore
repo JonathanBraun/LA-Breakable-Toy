@@ -15,3 +15,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore coveralls coverage report
+/coverage
+
+# Ignore ENV file
+.env
