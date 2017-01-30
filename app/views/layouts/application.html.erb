@@ -9,6 +9,21 @@
   </head>
 
   <body>
+        <h1>Currently Playing</h1>
+        <iframe src='https://open.spotify.com/user/jonathanbraun/playlist/6XIs7oxG4KjWixZsI2F3t8' frameborder='0' allowtransparency='true'></iframe>
+
+      <% if notice %>
+        <div class="callout small secondary">
+          <%= notice %>
+        </div>
+      <% end %>
+      <% if alert %>
+        <div class="callout small alert">
+          <%= alert %>
+        </div>
+      <% end %>
+
+
     <%= yield %>
   </body>
 </html>

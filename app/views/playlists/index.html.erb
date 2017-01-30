@@ -1,0 +1,26 @@
+<div class="row text-center white-text" id="add-monster-banner">
+<h1>Curiosity Curated</h1>
+<h5>Open-Minded Music for Open-Minded People</h5>
+
+<h1>Current Time: <%= Time.now %></h1>
+  <div>
+    <% if Time.now.strftime( "%H" ).to_i >= 15 && Time.now.strftime( "%H" ).to_i < 16 %>
+    <% time = Time.now.strftime( "%H" ) %>
+      <h6>America</h6>
+            <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:5VsZIW8lAIofDYunsn2lgz" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+    <% elsif Time.now.strftime( "%H" ).to_i >= 16 %>
+      <h5>Taking Care of Business</h5>
+      <h6><%= Time.now.strftime( "%H" ).to_i %></h6>
+      <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:6XIs7oxG4KjWixZsI2F3t8" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+    <% end %>
+  </deliver>
+</div>
+
+
+
+
+
+
+<div id="app"></div>
