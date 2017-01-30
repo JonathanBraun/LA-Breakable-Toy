@@ -9,8 +9,42 @@
   </head>
 
   <body>
-        <h1>Currently Playing</h1>
-        <iframe src='https://open.spotify.com/user/jonathanbraun/playlist/6XIs7oxG4KjWixZsI2F3t8' frameborder='0' allowtransparency='true'></iframe>
+    <div class="top-bar">
+      <div class="top-bar-title">
+        <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+          <button class="menu-icon dark" type="button" data-toggle></button>
+        </span>
+        <a href=""></a>
+      </div>
+      <div id="responsive-menu">
+        <div class="top-bar-right">
+          <ul class="dropdown menu align-middle" data-dropdown-menu>
+
+            <li>
+              <% if user_signed_in? %>
+                <a href="#"><%= current_user.username %></a>
+              <% else %>
+                <a href="#">Account</a>
+              <% end %>
+            </li>
+              <ul class="menu vertical">
+                <% if user_signed_in? %>
+                  <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+                  <% if current_user.admin? %>
+                    <li><%= link_to 'Manage users', admin_users_path %><li>
+                  <% end %>
+                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                  <li><%= link_to "Sign up", new_user_registration_path, :class => ''  %></li>
+                  <li><%= link_to "Login", new_user_session_path, :class => ''  %></li>
+                <% end %>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
 
       <% if notice %>
         <div class="callout small secondary">

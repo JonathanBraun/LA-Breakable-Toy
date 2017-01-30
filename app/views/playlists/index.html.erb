@@ -4,15 +4,36 @@
 
 <h1>Current Time: <%= Time.now %></h1>
   <div>
-    <% if Time.now.strftime( "%H" ).to_i >= 15 && Time.now.strftime( "%H" ).to_i < 16 %>
+    <% if Time.now.strftime( "%H" ).to_i >= 22 || Time.now.strftime( "%H" ).to_i < 7 %>
     <% time = Time.now.strftime( "%H" ) %>
-      <h6>America</h6>
-            <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:5VsZIW8lAIofDYunsn2lgz" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+      <h6>Late Late Night & Early Morning </h6>
+        <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:02fNngUe73Gf95yUc6Kw00" width="400" height="380" frameborder="0" allowtransparency="true"></iframe>
 
-    <% elsif Time.now.strftime( "%H" ).to_i >= 16 %>
+    <% elsif Time.now.strftime( "%H" ).to_i >= 7 && Time.now.strftime( "%H" ).to_i < 9 %>
+      <h5>Get Up and Go</h5>
+      <h6><%= Time.now.strftime( "%H" ).to_i %></h6>
+        <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:4Ix9B0kL1u8Rkt1asAYnV5" width="400" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+    <% elsif Time.now.strftime( "%H" ).to_i >= 9 && Time.now.strftime( "%H" ).to_i < 16 %>
       <h5>Taking Care of Business</h5>
       <h6><%= Time.now.strftime( "%H" ).to_i %></h6>
-      <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:6XIs7oxG4KjWixZsI2F3t8" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+        <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:6XIs7oxG4KjWixZsI2F3t8" width="400" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+    <% elsif Time.now.strftime( "%H" ).to_i >= 16 && Time.now.strftime( "%H" ).to_i < 18 %>
+      <h5>Americana</h5>
+      <h6><%= Time.now.strftime( "%H" ).to_i %></h6>
+        <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:5VsZIW8lAIofDYunsn2lgz" width="400" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+    <% elsif Time.now.strftime( "%H" ).to_i >= 18 && Time.now.strftime( "%H" ).to_i < 20 %>
+      <h5>Love Songs</h5>
+      <h6><%= Time.now.strftime( "%H" ).to_i %></h6>
+        <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:6E3Xx24JNyyGNQgqLRXwxF" width="400" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+    <% elsif Time.now.strftime( "%H" ).to_i >= 20 && Time.now.strftime( "%H" ).to_i < 22 %>
+      <h5>Evening</h5>
+      <h6><%= Time.now.strftime( "%H" ).to_i %></h6>
+        <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:6E3Xx24JNyyGNQgqLRXwxF" width="400" height="380" frameborder="0" allowtransparency="true"></iframe>
+
 
     <% end %>
   </deliver>
