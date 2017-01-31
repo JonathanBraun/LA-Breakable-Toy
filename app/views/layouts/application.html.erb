@@ -1,63 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>BreakableToy</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application", media: 'all' %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
     <div class="top-bar">
-      <div class="top-bar-title">
-        <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-          <button class="menu-icon dark" type="button" data-toggle></button>
-        </span>
-        <a href=""></a>
-      </div>
-      <div id="responsive-menu">
-        <div class="top-bar-right">
-          <ul class="dropdown menu align-middle" data-dropdown-menu>
+        <div class="top-bar-title">
+          <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+            <button class="menu-icon dark" type="button" data-toggle></button>
+          </span>
+        </div>
+        <div id="responsive-menu">
+          <div class="top-bar-right">
+            <ul class="dropdown menu align-middle" data-dropdown-menu>
 
-            <li>
-              <% if user_signed_in? %>
-                <a href="#"><%= current_user.username %></a>
-              <% else %>
-                <a href="#">Account</a>
-              <% end %>
-            </li>
-              <ul class="menu vertical">
+              <li>
                 <% if user_signed_in? %>
-                  <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-                  <% if current_user.admin? %>
-                    <li><%= link_to 'Manage users', admin_users_path %><li>
-                  <% end %>
-                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                  <a href="#"><%= current_user.username %></a>
                 <% else %>
-                  <li><%= link_to "Sign up", new_user_registration_path, :class => ''  %></li>
-                  <li><%= link_to "Login", new_user_session_path, :class => ''  %></li>
+                  <a href="#">Account</a>
                 <% end %>
-              </ul>
-            </li>
-          </ul>
+                <ul class="menu vertical">
+                  <% if user_signed_in? %>
+                    <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+                    <% if current_user.admin? %>
+                      <li><%= link_to 'Manage users', admin_users_path %><li>
+                    <% end %>
+                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                  <% else %>
+                    <li><%= link_to "Sign up", new_user_registration_path, :class => ''  %></li>
+                    <li><%= link_to "Login", new_user_session_path, :class => ''  %></li>
+                  <% end %>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+
+
+  <% if notice %>
+    <div class="callout small secondary">
+      <%= notice %>
     </div>
-
-
-      <% if notice %>
-        <div class="callout small secondary">
-          <%= notice %>
-        </div>
-      <% end %>
-      <% if alert %>
-        <div class="callout small alert">
-          <%= alert %>
-        </div>
-      <% end %>
-
+  <% end %>
+  <% if alert %>
+    <div class="callout small alert">
+      <%= alert %>
+    </div>
+  <% end %>
 
     <%= yield %>
+
   </body>
 </html>
