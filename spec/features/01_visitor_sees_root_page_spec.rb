@@ -3,8 +3,6 @@ require "rails_helper"
 feature "visitor sees homepage widget" do
   scenario "sees widget" do
 
-    user1 = User.create(username: "user", email: "user@example.com", password: "password")
-
     visit root_path
 
     expect(page).to have_content "Sonic Sifter"
