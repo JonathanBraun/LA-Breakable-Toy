@@ -10,7 +10,7 @@
     <%= stylesheet_link_tag    "application", media: 'all' %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-
+    <link rel="shortcut icon" href=<%= image_url("favicon.ico") %> >
   </head>
 
   <body>
@@ -19,6 +19,7 @@
           <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
             <button class="menu-icon dark" type="button" data-toggle></button>
           </span>
+          <a href="/">Sonic Sifter</a>
         </div>
         <div id="responsive-menu">
           <div class="top-bar-right">
