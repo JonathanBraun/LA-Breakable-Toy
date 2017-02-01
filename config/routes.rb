@@ -5,4 +5,9 @@ Rails.application.routes.draw do
 
   resources :playlists
 
+  namespace :api do
+    namespace :v1 do
+      resources :playlists
+    end
+  end
 end
