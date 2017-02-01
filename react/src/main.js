@@ -12,4 +12,3 @@
 // });
 //
 //
-// // flash message at certain times of day
