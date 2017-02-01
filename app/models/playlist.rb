@@ -1,7 +1,3 @@
-# class Playlist < ApplicationRecord
-#   def index
-#     binding.pry
-#     time = Time.now
-#     @hour = Time.now.hour
-#   end
-# end
+class Playlist < ApplicationRecord
+  valdates_presence_of :url, :name, :time
+end
