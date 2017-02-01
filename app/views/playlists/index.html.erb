@@ -2,16 +2,30 @@
 <h1 class="title">Sonic Sifter</h1>
 <h5>Open-Minded Music for Open-Minded People</h5>
 
+<form action="" method="">
+  <label for="playlist">Playlists:</label>
+  <select>
+    <option value="get_up_and_go">Get Up & Go</option>
+    <option value="inspiration">Inspiration</option>
+    <option value="relaxation">Relaxation</option>
+    <option selected value="taking_care_of_business">Taking Care of Business</option>
+    <option value="Americana">Americana</option>
+    <option value="love_songs">Love Songs</option>
+    <option value="heartache">Heartache</option>
+    <option value="evening_wind_down">Evening Wind Down</option>
+  </select>
+</form>
+
 <h6>Current Time: <%= Time.now %></h6>
 <br>
     <% if Time.now.strftime( "%H" ).to_i >= 22 || Time.now.strftime( "%H" ).to_i < 7 %>
     <% time = Time.now.strftime( "%H" ) %>
-      <h6>Late Late Night & Early Morning </h6>
+      <h6>Relaxation </h6>
       <br>
         <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:02fNngUe73Gf95yUc6Kw00" width="400" height="300" frameborder="0" allowtransparency="true"></iframe>
 
     <% elsif Time.now.strftime( "%H" ).to_i >= 7 && Time.now.strftime( "%H" ).to_i < 9 %>
-      <h6>Get Up and Go</h6>
+      <h6>Get Up & Go</h6>
       <br>
         <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:4Ix9B0kL1u8Rkt1asAYnV5" width="400" height="300" frameborder="0" allowtransparency="true"></iframe>
 
@@ -31,9 +45,9 @@
         <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:6E3Xx24JNyyGNQgqLRXwxF" width="400" height="300" frameborder="0" allowtransparency="true"></iframe>
 
     <% elsif Time.now.strftime( "%H" ).to_i >= 20 && Time.now.strftime( "%H" ).to_i < 22 %>
-      <h6>Evening</h6>
+      <h6>Evening Wind Down</h6>
       <br>
-        <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:70Z5q9kylvrI2PdlVuHFIa" width="300" height="300" frameborder="0" allowtransparency="true"></iframe>
+        <iframe src="https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:70Z5q9kylvrI2PdlVuHFIa" width="400" height="300" frameborder="0" allowtransparency="true"></iframe>
 
 
     <% end %>
