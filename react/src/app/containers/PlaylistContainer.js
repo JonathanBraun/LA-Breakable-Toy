@@ -26,6 +26,7 @@ class PlaylistContainer extends Component {
     let allPlaylists = this.state.playlists.map(playlist => {
       return(
         <Playlist
+          key={playlist.id}
           name={playlist.name}
           url={playlist.url}
           time={playlist.time}
@@ -40,3 +41,5 @@ class PlaylistContainer extends Component {
     );
   }
 }
+
+export default PlaylistContainer;
