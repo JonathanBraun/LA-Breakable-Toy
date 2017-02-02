@@ -63,7 +63,7 @@ body {
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     /*background: url(Background_test2.jpg) no-repeat;*/
-    background-size: cover;
+    /*background-size: cover;
 }*/
 
 @font-face {
