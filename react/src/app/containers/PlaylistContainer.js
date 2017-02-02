@@ -7,7 +7,7 @@ class PlaylistContainer extends Component {
     this.state = {
       playlist: []
     };
-    this.getPlaylist = this.getPlaylist.bind(this)
+    this.getPlaylist = this.getPlaylist.bind(this);
   }
 
   componentDidMount(){
