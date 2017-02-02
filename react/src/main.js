@@ -12,7 +12,8 @@ $(function() {
   }
 });
 
-
-// $(function() {$document.getElementById('dropdown').addEventListener('change',function(){
-//                 alert('Hello');
-//             });
+$(function() {
+  document.getElementById('dropdown').addEventListener('change',function(){
+    alert('Hello');
+  });
+});
