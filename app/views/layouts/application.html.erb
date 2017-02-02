@@ -18,7 +18,8 @@
           <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
             <button class="menu-icon dark" type="button" data-toggle></button>
           </span>
-          <a href="/">Sonic Sifter</a>
+          <a href="/">Home</a>
+
         </div>
         <div id="responsive-menu">
           <div class="top-bar-right">
@@ -33,6 +34,7 @@
                 <ul class="menu vertical">
                   <% if user_signed_in? %>
                     <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+                    <li><a href="/">Review A Playlist</a></li>
                     <% if current_user.admin? %>
                       <li><%= link_to 'Manage users', admin_users_path %><li>
                     <% end %>
@@ -41,6 +43,7 @@
                     <li><%= link_to "Sign up", new_user_registration_path, :class => ''  %></li>
                     <li><%= link_to "Login", new_user_session_path, :class => ''  %></li>
                   <% end %>
+                    <li><a href="/">Playlist Reviews</a></li>
                 </ul>
               </li>
             </ul>

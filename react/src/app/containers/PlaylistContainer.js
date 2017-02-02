@@ -5,39 +5,37 @@ class PlaylistContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      playlists: []
+      playlist: []
     };
-
+    this.getPlaylist = this.getPlaylist.bind(this)
   }
 
   componentDidMount(){
+    this.getPlaylist();
+    setInterval(this.getPlaylist, 600000 );
+  }
+
+
+  getPlaylist () {
     $.ajax({
         method: "GET",
         url: "/api/v1/playlists",
       })
       .done(data => {
         this.setState({
-          playlists: data
+          playlist: data
         });
       });
   }
 
   render(){
-    let allPlaylists = this.state.playlists.map(playlist => {
-      return(
-        <Playlist
-          key={playlist.id}
-          name={playlist.name}
-          url={playlist.url}
-          time={playlist.time}
-         />
-      );
-    });
-
     return(
-      <div>
-        {allPlaylists}
-      </div>
+      <Playlist
+        key={this.state.playlist.id}
+        name={this.state.playlist.name}
+        url={this.state.playlist.url}
+        time={this.state.playlist.time}
+      />
     );
   }
 }
