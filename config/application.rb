@@ -23,6 +23,7 @@ module BreakableToy
     # -- all .rb files in that directory are automatically loaded.
 
     config.assets.enabled = true
+    # config.assets.paths << "#{Rails.root}/app/assets/videos"
     config.assets.paths << Rails.root.join('/app/assets/fonts')
     config.active_record.time_zone_aware_types = [:datetime, :time]
   end

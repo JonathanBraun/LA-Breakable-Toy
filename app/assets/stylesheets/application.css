@@ -32,6 +32,40 @@ body {
   font-family: 'Ostrich Sans';
 }
 
+/*.background-image {
+   min-height:600px;
+   max-height:1200px;
+   background: url("jeff-golenski-stars.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   height:100%;
+ }
+
+.bg {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5000;
+}
+
+#bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    /*background: url(Background_test2.jpg) no-repeat;*/
+    /*background-size: cover;
+}*/
+
 @font-face {
     /*font-family: 'ostrich_sansbold';
     src: url('ostrichsans-bold-webfont.woff2') format('woff2'),
@@ -47,6 +81,7 @@ body {
    font-weight: normal;
    font-style: normal;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Ostrich Sans';
@@ -105,23 +140,6 @@ select {
   color: white;
   font-size: 150px;
   margin-bottom: 0px;
-}
-
-.background-image {
-   min-height:600px;
-   max-height:1200px;
-   background: url("jeff-golenski-stars.jpg");
-   background-size: cover;
-   background-repeat: no-repeat;
-   height:100%;
- }
-
-.bg {
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 5000;
 }
 
 .top-bar {

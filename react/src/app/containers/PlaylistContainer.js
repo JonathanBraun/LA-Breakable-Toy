@@ -23,24 +23,23 @@ class PlaylistContainer extends Component {
   }
 
   render(){
-    // let playlist_url
-    // if (this.state.pictures[this.state.currentPicture]){
-    //   playlist_url = this.state.pictures[this.state.currentPicture].image_url
-    // } else {
-    //   playlist_url = ""
-    // }
-
-    // let notice;
-    // if (this.state.alert){
-    //   notice = "flash";
-    // } else {
-    //   notice = "placeholder";
-    // }
+    let allPlaylists = this.state.playlists.map(playlist => {
+      return(
+        <Playlist
+          key={playlist.id}
+          name={playlist.name}
+          url={playlist.url}
+          time={playlist.time}
+         />
+      );
+    });
 
     return(
       <div>
-        <Playlist />
+        {allPlaylists}
       </div>
     );
   }
 }
+
+export default PlaylistContainer;
