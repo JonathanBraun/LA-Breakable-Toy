@@ -7,26 +7,26 @@ class SongSelectContainer extends Component {
     this.state = {
       playlist: []
     };
-    this.manualPlaylistSelect = this.manualPlaylistSelect.bind(this)
+    this.manualPlaylistSelect = this.manualPlaylistSelect.bind(this);
   }
 
   componentDidMount(){
-    // this.manualPlaylistSelect();
-    // setInterval(this.manualPlaylistSelect, 600000 );
+    // document.getElementById('dropdown').addEventListener('change',manualPlaylistSelect()
   }
 
 
   manualPlaylistSelect () {
-    // let playlistId = this.state.pictures[this.state.currentPicture].id
-    // let fetchBody = { id: playlistId }
-    // fetch('/api/v1/playlists',
-    //   { method: "POST",
-    //   body: JSON.stringify(fetchBody),
-    //   credentials: 'include' })
-    //   .then((response) => {
-    //     let playlist = response.json()
-    //     return playlist
-    //   }).then((response) => {
+    let playlistId = this.state.playlist.id
+    let fetchBody = { id: playlistId }
+    fetch('/api/v1/playlists',
+      { method: "POST",
+      body: JSON.stringify(fetchBody),
+      })
+      .then((response) => {
+        let playlist = response.json()
+        return playlist
+        console.log(playlist)
+      }).then((response) => {
     //     let name = response.name
     //     let nextPicture;
     //     if (this.state.currentPicture < this.state.pictures.length - 1){
@@ -35,7 +35,7 @@ class SongSelectContainer extends Component {
     //       nextPicture = 0
     //     }
     //     this.setState({ alert: `You've been matched with ${name}, the Kyle of your dreams.`, currentPicture: nextPicture })
-    //   })
+      })
   }
 
   render(){
