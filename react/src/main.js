@@ -11,9 +11,3 @@ $(function() {
     );
   }
 });
-
-$(function() {
-  document.getElementById('dropdown').addEventListener('change',function(){
-    alert('Hello');
-  });
-});

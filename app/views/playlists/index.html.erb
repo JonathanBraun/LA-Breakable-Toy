@@ -2,21 +2,16 @@
 <h1 class="title">Sonic Sifter</h1>
 <h5>Open-Minded Music for Open-Minded People</h5>
 
-<form action="" method="">
-  <label for="playlist">Playlists:</label>
-  <select id="dropdown">
-    <option value="get_up_and_go">Get Up & Go</option>
-    <option value="inspiration">Inspiration</option>
-    <option value="relaxation">Relaxation</option>
-    <option selected value="taking_care_of_business">Taking Care of Business</option>
-    <option value="Americana">Americana</option>
-    <option value="love_songs">Love Songs</option>
-    <option value="heartache">Heartache</option>
-    <option value="evening_wind_down">Evening Wind Down</option>
-  </select>
-</form>
+<h6>Current Time: <div id="txt"></div></h6>
 
-<h6>Current Time: <%= Time.now %></h6>
+<div class="onoffswitch">
+    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>
+
 <br>
     <!-- <% if Time.now.strftime( "%H" ).to_i >= 22 || Time.now.strftime( "%H" ).to_i < 7 %>
     <% time = Time.now.strftime( "%H" ) %>
@@ -55,4 +50,6 @@
 </div>
 
 
+
 <div class="row text-center white-text" id="app"></div>
+<br>
