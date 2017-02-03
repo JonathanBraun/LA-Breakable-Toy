@@ -22,4 +22,15 @@ class Api::V1::PlaylistsController < ApplicationController
       render json: playlists
     end
   end
+
+  def create
+    data = JSON.parse(request.body.read)
+    playlist = Playlist.find(data["id"])
+    render json: playlist
+  end
 end
+
+
+# check box or switch
+# switch sets state on react app
+# post request for the name of the playlist

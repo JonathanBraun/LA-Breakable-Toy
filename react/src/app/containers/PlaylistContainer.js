@@ -7,16 +7,16 @@ class PlaylistContainer extends Component {
     this.state = {
       playlist: []
     };
-    this.getPlaylist = this.getPlaylist.bind(this)
+    this.getPlaylistAuto = this.getPlaylistAuto.bind(this)
   }
 
   componentDidMount(){
-    this.getPlaylist();
-    setInterval(this.getPlaylist, 60 );
+    this.getPlaylistAuto();
+    setInterval(this.getPlaylistAuto, 600000 );
   }
 
 
-  getPlaylist () {
+  getPlaylistAuto () {
     $.ajax({
         method: "GET",
         url: "/api/v1/playlists",
@@ -27,6 +27,18 @@ class PlaylistContainer extends Component {
         });
       });
   }
+
+  // manualPlaylistSelect () {
+  //   $.ajax({
+  //       method: "POST",
+  //       url: "/api/v1/playlists",
+  //     })
+  //     .done(data => {
+  //       this.setState({
+  //         playlist: data
+  //       });
+  //     });
+  // }
 
   render(){
     return(
