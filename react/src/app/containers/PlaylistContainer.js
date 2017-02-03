@@ -12,7 +12,7 @@ class PlaylistContainer extends Component {
 
   componentDidMount(){
     this.getPlaylist();
-    setInterval(this.getPlaylist, 600000 );
+    setInterval(this.getPlaylist, 60 );
   }
 
 
