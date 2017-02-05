@@ -5,18 +5,18 @@ const SongSelect = props => {
   return(
     <form action="" method="">
       <label htmlFor="playlist">Switch Playlists:</label>
-      <select id="dropdown">
-        <option value="get_up_and_go">Get Up & Go</option>
-        <option value="inspiration">Inspiration</option>
-        <option value="relaxation">Relaxation</option>
-        <option selected value="taking_care_of_business">Taking Care of Business</option>
-        <option value="Americana">Americana</option>
-        <option value="love_songs">Love Songs</option>
-        <option value="heartache">Heartache</option>
-        <option value="evening_wind_down">Evening Wind Down</option>
+      <select id="dropdown" onChange={props.getManualPlaylist}>
+        <option value="Get Up & Go" >Get Up & Go</option>
+        <option value="Inspiration" >Inspiration</option>
+        <option value="Relaxation" >Relaxation</option>
+        <option selected value="Taking Care of Business"> Taking Care of Business</option>
+        <option value="Americana" >Americana</option>
+        <option value="Love Songs" >Love Songs</option>
+        <option value="Heartache" >Heartache</option>
+        <option value="Evening Wind Down" >Evening Wind Down</option>
       </select>
     </form>
-  )
-}
+  );
+};
 
 export default SongSelect;
