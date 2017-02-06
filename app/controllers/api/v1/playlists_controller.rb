@@ -1,4 +1,6 @@
 class Api::V1::PlaylistsController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+
   def index
     # playlists = Playlist.all
     # render json: playlists
@@ -25,12 +27,7 @@ class Api::V1::PlaylistsController < ApplicationController
 
   def create
     data = JSON.parse(request.body.read)
-    playlist = Playlist.find(data[1])
+    playlist = Playlist.find_by_name(data["name"])
     render json: playlist
   end
 end
-
-
-# check box or switch
-# switch sets state on react app
-# post request for the name of the playlist

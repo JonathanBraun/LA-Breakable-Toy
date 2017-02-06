@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PlaylistContainer from './containers/PlaylistContainer';
-import SongSelectContainer from './containers/SongSelectContainer';
 
 class App extends Component {
   constructor(props){
@@ -12,7 +11,6 @@ class App extends Component {
   render() {
     return(
       <div>
-        <SongSelectContainer />,
         <PlaylistContainer />
       </div>
     );
