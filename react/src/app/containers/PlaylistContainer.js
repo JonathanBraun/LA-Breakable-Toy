@@ -19,7 +19,7 @@ class PlaylistContainer extends Component {
   }
 
   componentDidMount(){
-    let interval = setInterval(this.getPlaylistAuto, 600000 );
+    let interval = setInterval(this.getPlaylistAuto, 5000 );
     this.setState({interval: interval});
     if (this.state.manual) {
       this.getManualPlaylist();
@@ -28,20 +28,27 @@ class PlaylistContainer extends Component {
     }
   }
 
-  // componentWillUnmount () {
-  //    // use intervalId from the state to clear the interval
-  //    clearInterval(this.state.interval);
+  // handleClick(){
+  //   this.setState(prevState => ({
+  //     manual: !prevState.manual
+  //   }));
   // }
-
 
   handleClick(){
     this.setState(prevState => ({
       manual: !prevState.manual
     }));
+    if (document.getElementById("auto_man").checked) {
+      clearInterval(this.state.interval);
+      this.getManualPlaylist(event);
+    } else {
+      this.getPlaylistAuto();
+      let interval = setInterval(this.getPlaylistAuto, 5000 );
+      this.setState({interval: interval});
+    }
   }
 
   getManualPlaylist(event){
-    clearInterval(this.state.interval);
     let fetchBody = { name: event.target.value };
     fetch('/api/v1/playlists',
       { method: "POST",
@@ -79,7 +86,7 @@ class PlaylistContainer extends Component {
           <form name="test">
           <label className="checkbox-inline">
           Manual &nbsp;
-            <input onClick={this.handleClick} type="checkbox" name="checkgroup"/>
+            <input onClick={this.handleClick} type="checkbox" name="checkgroup" id="auto_man"/>
           </label>
           </form>
         </span>
@@ -100,7 +107,7 @@ class PlaylistContainer extends Component {
             <span>
               <form name="test">
                 <label className="checkbox-inline">Automatic &nbsp;
-                  <input onClick={this.handleClick} type="checkbox" name="checkgroup"/>
+                  <input onClick={this.handleClick} type="checkbox" name="checkgroup" id="auto_man"/>
                 </label>
               </form>
             </span>
