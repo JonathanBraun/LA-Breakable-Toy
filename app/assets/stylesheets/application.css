@@ -173,7 +173,7 @@ select {
 }
 
 #add-background-light {
-  width: 800px;
+  max-width: 800px;
   background: rgba(247,247,247, .7);
   background-repeat: no-repeat;
   background-position: center;
