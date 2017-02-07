@@ -1,7 +1,9 @@
 class PlaylistsController < ApplicationController
-  #   def index
-  #     binding.pry
-  #     time = Time.now
-  #     @hour = Time.now.hour
-  #   end
+    def index
+
+    end
+
+    def show
+    end
+
 end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "playlists#index"
 
   resources :playlists
+  resources :reviews
 
   namespace :api do
     namespace :v1 do
