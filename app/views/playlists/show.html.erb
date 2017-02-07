@@ -1,0 +1,61 @@
+</br>
+<div class="row text-center white-text" id="show-playlist-banner">
+<h1><%= @playlist.name %></h1>
+</div>
+
+
+<div class="row text-center">
+<h3>Feedback on this Playlist</h3>
+<% if @reviews.empty? %>
+</br>
+  <h4>We don't have any ratings for this playlist yet!</h4>
+</br>
+<% else %>
+  <% @reviews.each do |review| %>
+  </br>
+  <h6>User: <%= review.user.username  %></h6>
+  <h6>Rating: <%= review.rating  %></h6>
+    <% if review.body.empty? %>
+      <h6>User did not provide a description</h6>
+    <% else %>
+      <h6>Description: <%= review.body %></h6>
+    <% end %>
+    </br></br>
+    <% if !current_user.nil? %>
+      <% if current_user.id == review.user_id || current_user.admin? %>
+      <div id="edit-review">
+        <%= link_to 'Edit review', edit_playlist_review_path(@playlist, review) %>
+      </div>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+</div>
+
+
+<div class="text-center" >
+<h3>Rate This Playlist</h3>
+  <div id="review-background">
+    <%= form_for [@playlist, @review] do |f| %>
+
+      <div class="form-element">
+        <%= f.label :rating, "This playlist's rating:" %>
+        Not For Me <%= f.range_field :rating, in: 1..5 %> Loved It
+      </div>
+
+      <br />
+      <div class="form-element">
+        <%= f.label :body, "Additional feedback on this playlist?" %>
+        <%= f.text_area :body %>
+        <br />
+      </div>
+
+      <div class="form-element">
+      <%= f.submit "Submit", class: "button" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+</br>
+</br>
+</br>

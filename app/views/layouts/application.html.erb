@@ -52,7 +52,7 @@
                 <ul class="menu vertical">
                   <% if user_signed_in? %>
                     <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-                    <li><a href="/">Review A Playlist</a></li>
+                    <li><a href="/reviews">Review A Playlist</a></li>
                     <% if current_user.admin? %>
                       <li><%= link_to 'Manage users', admin_users_path %><li>
                     <% end %>
@@ -60,8 +60,8 @@
                   <% else %>
                     <li><%= link_to "Sign up", new_user_registration_path, :class => ''  %></li>
                     <li><%= link_to "Login", new_user_session_path, :class => ''  %></li>
-                  <% end %>
                     <li><a href="/reviews">Playlist Reviews</a></li>
+                  <% end %>
                 </ul>
               </li>
             </ul>
