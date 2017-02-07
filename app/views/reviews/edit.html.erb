@@ -1,0 +1,10 @@
+<div class="row text-center white-text" id="add-playlist-banner">
+<h1>Edit rating for <%= @playlist.name %></h1>
+</div>
+<div class="row text-center" id="add-background-light">
+<%= render 'form' %>
+<br />
+<%= link_to 'Delete', [@playlist, @review], method: :delete, data: { confirm: 'Are you sure?' } %>
+ |
+ <%= link_to 'Back', @playlist %>
+</div>

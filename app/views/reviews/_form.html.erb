@@ -1,0 +1,18 @@
+<%= form_for [@playlist, @review] do |f| %>
+
+  <div class="form-element">
+    <%= f.label :rating, "This playlist's rating:" %>
+    Not For Me <%= f.range_field :rating in: 1..5 %> Loved It
+  </div>
+
+  <br />
+  <div class="form-element">
+    <%= f.label :body, "Additional feedback on this playlist?" %>
+    <%= f.text_area :body %>
+    <br />
+  </div>
+
+  <div class="form-element">
+  <%= f.submit "Submit", class: "button" %>
+  </div>
+<% end %>

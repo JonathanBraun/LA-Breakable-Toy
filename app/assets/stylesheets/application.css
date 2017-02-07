@@ -116,6 +116,7 @@ h6 {
 
 li {
   font-size: 30px;
+  list-style: none;
 }
 
 label {
@@ -128,6 +129,11 @@ i {
   color: black;
 }
 
+.field {
+  color:black;
+}
+
+
 em {
   font-size: 20px;
   color: black;
@@ -137,6 +143,16 @@ select {
   font-size: 20px;
   width: auto;
 }
+
+/*ul {
+  width: 300px;
+  background: rgba(247,247,247, .7);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  padding: 20px 10px 20px 10px;
+  margin: auto;
+}*/
 
 
 .title {
@@ -157,11 +173,31 @@ select {
 }
 
 #add-background-light {
+  width: 800px;
   background: rgba(247,247,247, .7);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
   padding: 50px 10px 50px 10px;
+}
+
+#edit-review {
+  background: rgba(247,247,247, .7);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+  width: 200px;
+  background-size: 100%;
+}
+
+#review-background {
+  background: rgba(247,247,247, .7);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+  width: 500px;
+  background-size: 100%;
+  padding: 30px 10px 30px 10px;
 }
 
  .embed-container {
