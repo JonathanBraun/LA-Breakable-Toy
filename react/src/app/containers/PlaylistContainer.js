@@ -28,12 +28,6 @@ class PlaylistContainer extends Component {
     }
   }
 
-  // componentWillUnmount () {
-  //    // use intervalId from the state to clear the interval
-  //    clearInterval(this.state.interval);
-  // }
-
-
   // handleClick(){
   //   this.setState(prevState => ({
   //     manual: !prevState.manual
@@ -49,11 +43,9 @@ class PlaylistContainer extends Component {
       this.getManualPlaylist(event);
     } else {
       this.getPlaylistAuto();
-      setInterval(this.getPlaylistAuto, 5000);
+      let interval = setInterval(this.getPlaylistAuto, 5000 );
+      this.setState({interval: interval});
     }
-    // this.setState(prevState => ({
-    //   manual: !prevState.manual
-    // }));
   }
 
   getManualPlaylist(event){
@@ -74,7 +66,6 @@ class PlaylistContainer extends Component {
 
 
   getPlaylistAuto () {
-    console.log("Auto Method");
     $.ajax({
         method: "GET",
         url: "/api/v1/playlists",
