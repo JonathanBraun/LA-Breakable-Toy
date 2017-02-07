@@ -20,7 +20,7 @@
     <% else %>
       <h6>Description: <%= review.body %></h6>
     <% end %>
-    </br></br>
+    </br>
     <% if !current_user.nil? %>
       <% if current_user.id == review.user_id || current_user.admin? %>
       <div id="edit-review">
@@ -30,6 +30,7 @@
     <% end %>
   <% end %>
 <% end %>
+</br>
 </div>
 
 

@@ -5,7 +5,6 @@ class ReviewsController < ApplicationController
 
   def index
     @playlists = Playlist.all
-    @review
   end
 
   def new
@@ -34,10 +33,10 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    # @review = Review.find(params[:id])
-    # if @review.user_id != current_user.id && !current_user.admin?
-    #   redirect_to playlist_path(@review.playlist_id), notice: "You are not the author of this review"
-    # end
+    @review = Review.find(params[:id])
+    if @review.user_id != current_user.id && !current_user.admin?
+      redirect_to playlist_path(@review.playlist_id), notice: "You are not the author of this review"
+    end
   end
 
   def update
