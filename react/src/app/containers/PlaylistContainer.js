@@ -28,11 +28,6 @@ class PlaylistContainer extends Component {
     }
   }
 
-  // handleClick(){
-  //   this.setState(prevState => ({
-  //     manual: !prevState.manual
-  //   }));
-  // }
 
   handleClick(){
     this.setState(prevState => ({
