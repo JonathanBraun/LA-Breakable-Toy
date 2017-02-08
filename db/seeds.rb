@@ -23,3 +23,11 @@ Playlist.create!(url:
  Playlist.create!(url:
    "https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:02fNngUe73Gf95yUc6Kw00", time: DateTime.parse("22:00:00"),
   name: "Relaxation")
+Playlist.create!(
+   url: "https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:0FtQ9fXCfkpAssnykdmF1l",
+   time: DateTime.parse("10:00:00"),
+   name: "Inspiration")
+Playlist.create!(
+   url: "https://embed.spotify.com/?uri=spotify:user:jonathanbraun:playlist:2dZeDAuJut4VVrvhvbgVZn",
+   time: DateTime.parse("15:00:00"), 
+   name: "Heartache")
