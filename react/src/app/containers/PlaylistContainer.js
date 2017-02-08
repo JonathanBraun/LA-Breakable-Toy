@@ -73,6 +73,8 @@ class PlaylistContainer extends Component {
       });
   }
 
+
+
   // getPlaylistAuto () {
   //   $.ajax({
   //       method: "GET",
