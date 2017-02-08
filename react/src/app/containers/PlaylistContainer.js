@@ -9,7 +9,6 @@ class PlaylistContainer extends Component {
     this.state = {
       manual: false,
       interval: null,
-      requestedPlaylistName: "",
       currentPlaylist: {id: null, name: null, url: null, time: null},
       nextPlaylist: {id: null, name: null, url: null, time: null}
     };
@@ -59,7 +58,6 @@ class PlaylistContainer extends Component {
       });
   }
 
-
   getPlaylistAuto () {
     $.ajax({
         method: "GET",
@@ -72,8 +70,6 @@ class PlaylistContainer extends Component {
         });
       });
   }
-
-
 
   // getPlaylistAuto () {
   //   $.ajax({
