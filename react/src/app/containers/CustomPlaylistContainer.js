@@ -3,13 +3,25 @@ import Playlist from '../components/Playlist';
 import PlaylistStatus from '../components/PlaylistStatus';
 import SongSelect from '../components/SongSelect';
 
-class PlaylistContainer extends Component {
+class CustomPlaylistContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
       manual: false,
       interval: null,
       requestedPlaylistName: "",
+      timeslot_1:,
+      timeslot_2:,
+      timeslot_3:,
+      timeslot_4:,
+      timeslot_5:,
+      timeslot_6:,
+      timeslot_7:,
+      timeslot_8:,
+      timeslot_9:,
+      timeslot_10:,
+      timeslot_11:,
+      timeslot_12:,
       currentPlaylist: {id: null, name: null, url: null, time: null},
       nextPlaylist: {id: null, name: null, url: null, time: null}
     };
@@ -150,4 +162,4 @@ class PlaylistContainer extends Component {
   }
 }
 
-export default PlaylistContainer;
+export default CustomPlaylistContainer;
