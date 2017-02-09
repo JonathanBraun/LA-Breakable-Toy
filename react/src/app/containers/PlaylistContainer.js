@@ -117,7 +117,6 @@ class PlaylistContainer extends Component {
         </span>
         <SongSelect
           getManualPlaylist={this.getManualPlaylist}
-          handleSelect={this.handleSelect}
         />
         <Playlist
           key={this.state.currentPlaylist.id}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PlaylistContainer from './containers/PlaylistContainer';
+import CustomPlaylistContainer from './containers/CustomPlaylistContainer';
 
-class App extends Component {
+class AppCustom extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -11,10 +11,10 @@ class App extends Component {
   render() {
     return(
       <div>
-        <PlaylistContainer />
+        <CustomPlaylistContainer />
       </div>
     );
   }
 }
 
-export default App;
+export default AppCustom;

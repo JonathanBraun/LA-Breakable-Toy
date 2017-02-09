@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :reviews
+  resources :users, only: [:show]
 
   namespace :api do
     namespace :v1 do
