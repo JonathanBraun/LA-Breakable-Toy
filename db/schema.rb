@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207005538) do
+ActiveRecord::Schema.define(version: 20170209153634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "custom_playlist_timeslots", force: :cascade do |t|
+    t.integer  "user_playlists_id", null: false
+    t.integer  "timeslots_id",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["timeslots_id"], name: "index_custom_playlist_timeslots_on_timeslots_id", using: :btree
+    t.index ["user_playlists_id"], name: "index_custom_playlist_timeslots_on_user_playlists_id", using: :btree
+  end
 
   create_table "playlists", force: :cascade do |t|
     t.string   "url",        null: false
@@ -32,6 +41,22 @@ ActiveRecord::Schema.define(version: 20170207005538) do
     t.datetime "updated_at",  null: false
     t.index ["playlist_id"], name: "index_reviews_on_playlist_id", using: :btree
     t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
+  end
+
+  create_table "timeslots", force: :cascade do |t|
+    t.integer  "begin_time", null: false
+    t.integer  "end_time",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_playlists", force: :cascade do |t|
+    t.integer  "user_id",     null: false
+    t.integer  "playlist_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["playlist_id"], name: "index_user_playlists_on_playlist_id", using: :btree
+    t.index ["user_id"], name: "index_user_playlists_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

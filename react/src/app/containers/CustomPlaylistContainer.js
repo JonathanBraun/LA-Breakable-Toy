@@ -7,23 +7,8 @@ class CustomPlaylistContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      manual: false,
-      interval: null,
       requestedPlaylistName: "",
-      timeslot_1:,
-      timeslot_2:,
-      timeslot_3:,
-      timeslot_4:,
-      timeslot_5:,
-      timeslot_6:,
-      timeslot_7:,
-      timeslot_8:,
-      timeslot_9:,
-      timeslot_10:,
-      timeslot_11:,
-      timeslot_12:,
-      currentPlaylist: {id: null, name: null, url: null, time: null},
-      nextPlaylist: {id: null, name: null, url: null, time: null}
+      timeslots: []
     };
     this.getPlaylistAuto = this.getPlaylistAuto.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -54,64 +39,20 @@ class CustomPlaylistContainer extends Component {
     }
   }
 
-  getManualPlaylist(event){
-    let fetchBody = { name: event.target.value };
-    fetch('/api/v1/playlists',
+  getCustomPlaylist(event){
+    let fetchBody = { playlist_id: , timeslot_id: };
+
+
+    fetch('/api/v1/customplaylists',
       { method: "POST",
       body: JSON.stringify(fetchBody)
       })
       .then((response) => {
-        let playlist = response.json();
-        return playlist;
-      }).then((response) => {
-        this.setState({
-          currentPlaylist: response
-        });
+        alert("Playlist saved to selected timeslot!");
       });
   }
-
-
-  getPlaylistAuto () {
-    $.ajax({
-        method: "GET",
-        url: "/api/v1/playlists",
-      })
-      .done(data => {
-        this.setState({
-          currentPlaylist: data[0],
-          nextPlaylist: data[1]
-        });
-      });
-  }
-
-  // getPlaylistAuto () {
-  //   $.ajax({
-  //       method: "GET",
-  //       url: "/api/v1/playlists",
-  //     })
-  //     .done(data => {
-  //       console.log(data[0]);
-  //       console.log(this.state.currentPlaylist);
-  //       if (this.state.currentPlaylist != data[0]){
-  //         console.log("Hey Jon.");
-  //         this.setState({
-  //           currentPlaylist: data[0],
-  //           nextPlaylist: data[1]
-  //         });
-  //       } else {
-  //         console.log("Can you see me?");
-  //         alert(`There is a new playlist available for the current time slot. Just click the Play Button or if you'd like to continue listening to ${this.state.currentPlaylist.name} then switch over to manual mode.`);
-  //         this.setState({
-  //           currentPlaylist: data[0],
-  //           nextPlaylist: data[1]
-  //         });
-  //       }
-  //     });
-  // }
-
 
   render(){
-    if (this.state.manual) {
       return(
         <div>
         <span>
@@ -126,6 +67,50 @@ class CustomPlaylistContainer extends Component {
           getManualPlaylist={this.getManualPlaylist}
           handleSelect={this.handleSelect}
         />
+        <SongSelect
+          getManualPlaylist={this.getManualPlaylist}
+          handleSelect={this.handleSelect}
+        />
+        <SongSelect
+          getManualPlaylist={this.getManualPlaylist}
+          handleSelect={this.handleSelect}
+        />
+        <SongSelect
+          getManualPlaylist={this.getManualPlaylist}
+          handleSelect={this.handleSelect}
+        />
+        <SongSelect
+          getManualPlaylist={this.getManualPlaylist}
+          handleSelect={this.handleSelect}
+        />
+        <SongSelect
+          getManualPlaylist={this.getManualPlaylist}
+          handleSelect={this.handleSelect}
+        />
+        <SongSelect
+          getManualPlaylist={this.getManualPlaylist}
+          handleSelect={this.handleSelect}
+        />
+        <SongSelect
+          getManualPlaylist={this.getManualPlaylist}
+          handleSelect={this.handleSelect}
+        />
+        <SongSelect
+          getManualPlaylist={this.getManualPlaylist}
+          handleSelect={this.handleSelect}
+        />
+        <SongSelect
+          getManualPlaylist={this.getManualPlaylist}
+          handleSelect={this.handleSelect}
+        />
+        <SongSelect
+          getManualPlaylist={this.getManualPlaylist}
+          handleSelect={this.handleSelect}
+        />
+        <SongSelect
+          getManualPlaylist={this.getManualPlaylist}
+          handleSelect={this.handleSelect}
+        />
         <Playlist
           key={this.state.currentPlaylist.id}
           name={this.state.currentPlaylist.name}
@@ -133,32 +118,7 @@ class CustomPlaylistContainer extends Component {
           time={this.state.currentPlaylist.time}
         />
         </div>
-      )} else {
-        return(
-          <div>
-            <span>
-              <form name="test">
-                <label className="checkbox-inline">Automatic &nbsp;
-                  <input onClick={this.handleClick} type="checkbox" name="checkgroup" id="auto_man"/>
-                </label>
-              </form>
-            </span>
-            <Playlist
-              key={this.state.currentPlaylist.id}
-              name={this.state.currentPlaylist.name}
-              url={this.state.currentPlaylist.url}
-              time={this.state.currentPlaylist.time}
-            />
-            <PlaylistStatus
-              name={this.state.currentPlaylist.name}
-              nextName={this.state.nextPlaylist.name}
-              nextTime={this.state.nextPlaylist.time}
-             />
-           </div>
-        );
-      }
-
-
+      )
   }
 }
 

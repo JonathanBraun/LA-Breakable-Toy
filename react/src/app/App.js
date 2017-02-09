@@ -10,9 +10,11 @@ class App extends Component {
 
   render() {
     return(
+      // if on homepage
       <div>
         <PlaylistContainer />
       </div>
+      // else on user show page
     );
   }
 }

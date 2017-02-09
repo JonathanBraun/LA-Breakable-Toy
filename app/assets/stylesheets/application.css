@@ -29,7 +29,7 @@ body {
   background-repeat: no-repeat;
   height:100%;
   color: white;
-  font-family: 'Ostrich Sans';
+  font-family: 'Ostrich Sans', Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
 /*.background-image {
