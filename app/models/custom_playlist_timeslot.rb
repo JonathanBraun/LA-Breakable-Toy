@@ -1,6 +1,6 @@
-class CustomPlaylistTimeSlot < ApplicationRecord
-  validates_presence_of :user_id, :playlist_id
+class CustomPlaylistTimeslot < ApplicationRecord
+  validates_presence_of :user_playlist, :timeslot
 
-  belongs_to :timeslots
-  belongs_to :user_playlists, through: :custom_playlist_timeslots
+  belongs_to :timeslot
+  belongs_to :user_playlist
 end

@@ -66,8 +66,6 @@ class PlaylistContainer extends Component {
         url: "/api/v1/playlists",
       })
       .done(data => {
-        let time = data[1].time;
-        let timeString = time.toString();
         this.setState({
           currentPlaylist: data[0],
           nextPlaylist: data[1],

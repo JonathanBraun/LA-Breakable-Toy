@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209153634) do
+ActiveRecord::Schema.define(version: 20170210205121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "custom_playlist_timeslots", force: :cascade do |t|
-    t.integer  "user_playlists_id", null: false
-    t.integer  "timeslots_id",      null: false
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.index ["timeslots_id"], name: "index_custom_playlist_timeslots_on_timeslots_id", using: :btree
-    t.index ["user_playlists_id"], name: "index_custom_playlist_timeslots_on_user_playlists_id", using: :btree
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "user_playlist_id"
+    t.integer  "timeslot_id"
+    t.index ["timeslot_id"], name: "index_custom_playlist_timeslots_on_timeslot_id", using: :btree
+    t.index ["user_playlist_id"], name: "index_custom_playlist_timeslots_on_user_playlist_id", using: :btree
   end
 
   create_table "playlists", force: :cascade do |t|
@@ -79,4 +79,6 @@ ActiveRecord::Schema.define(version: 20170209153634) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "custom_playlist_timeslots", "timeslots"
+  add_foreign_key "custom_playlist_timeslots", "user_playlists"
 end

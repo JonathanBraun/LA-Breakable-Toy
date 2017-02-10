@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :user_playlists
   has_many :playlists, through: :user_playlists
+  has_many :custom_playlist_timeslots, through: :user_playlists
 end
