@@ -26,18 +26,20 @@ class CustomSongSelect extends Component {
           user_playlists: data.user_playlists
         });
       });
-      let interval = setInterval(this.getPlaylistAuto, 5000 );
+      // let interval = setInterval(this.getPlaylistAuto, 5000 );
       this.getPlaylistAuto();
   }
 
   getPlaylistAuto () {
-    $.ajax({
-        method: "GET",
-        url: "/api/v1/playlists",
-      })
-      .done(data => {
+    fetch("/api/v1/custom_playlists/0",
+      { credentials: "include"})
+      .then((response) => {
+        let playlist = response.json()
+        return playlist
+      }).then(playlist => {
+        debugger;
         this.setState({
-          currentPlaylist: data[0]
+          currentPlaylist: playlist
         });
       });
 
@@ -80,10 +82,7 @@ render() {
       <table>
         <thead>
         <tr>
-           <th>Time: AM</th>
-           <th>Playlist</th>
-
-           <th>Time: PM</th>
+           <th>Military Time:</th>
            <th>Playlist</th>
         </tr>
         </thead>

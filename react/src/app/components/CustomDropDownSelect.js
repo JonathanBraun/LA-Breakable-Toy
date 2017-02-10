@@ -3,7 +3,7 @@ import React from 'react';
 const CustomDropDownSelect = props => {
   return(
     <tr>
-        <td>{props.timeslot.begin_time}am-{props.timeslot.end_time}am</td>
+        <td>{props.timeslot.begin_time}-{props.timeslot.end_time}</td>
         <td>
         <form action="" method="">
           <select id="dropdown" onChange={props.setTimeslot}>
