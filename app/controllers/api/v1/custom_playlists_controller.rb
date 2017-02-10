@@ -2,7 +2,17 @@ class Api::V1::CustomPlaylistsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def index
-    CustomPlaylistTimeslot.all
+    if UserPlaylist.where(user_id: current_user).empty?
+      playlists = Playlist.all
+      playlists.each do |playlist|
+        UserPlaylist.create!(user_id: current_user.id, playlist_id: playlist.id)
+      end
+    end
+
+    user_playlists = UserPlaylist.all
+    timeslots = Timeslot.all
+
+    render json: {user_playlists: user_playlists, timeslots: timeslots }
   end
 
   def new

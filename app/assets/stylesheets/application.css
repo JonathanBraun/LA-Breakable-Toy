@@ -82,12 +82,23 @@ body {
    font-style: normal;
 }
 
-table, th, td {
-    border: 1px solid black;
+table, th, td, thead th, thead td, tfoot th, tfoot td {
+    /*border: 1px solid black;*/
+    text-align: center;
+    padding: 0px;
+    padding-top: 8px;
+    font-size: 22px;
 }
 
 table {
-  width: 500px;
+  width: 700px;
+  margin: auto;
+  background-position: center;
+  padding-bottom: 0px;
+}
+
+form {
+  padding-bottom: 0px;
 }
 
 h1, h2, h3, h4, h5 {

@@ -3,5 +3,6 @@ class UserPlaylist < ApplicationRecord
 
   belongs_to :user
   belongs_to :playlist
-  belongs_to :custom_playlist_timeslot
+  has_many :custom_playlist_timeslots
+  has_many :timeslots, through: :custom_playlist_timeslots
 end

@@ -11,15 +11,14 @@ class CustomPlaylistContainer extends Component {
       timeslots: [],
       currentPlaylist: {id: null, name: null, url: null, time: null}
     };
-    this.getCustomPlaylist = this.getCustomPlaylist.bind(this);
-    this.getManualPlaylist = this.getManualPlaylist.bind(this);
+    // this.getCustomPlaylist = this.getCustomPlaylist.bind(this);
+    // this.getManualPlaylist = this.getManualPlaylist.bind(this);
   }
 
-  componentDidMount(){
-    $(document).foundation('accordion', 'reflow');
-    this.getCustomPlaylist();
-    setInterval(this.getCustomPlaylist, 3000);
-  }
+  // componentDidMount(){
+  //   this.getPlaylistAuto();
+  //   setInterval(this.getPlaylistAuto, 3000);
+  // }
 
   // handleClick(){
   //   this.setState(prevState => ({
@@ -34,43 +33,59 @@ class CustomPlaylistContainer extends Component {
   //     this.setState({interval: interval});
   //   }
   // }
-
-  getManualPlaylist(event){
-    let fetchBody = { name: event.target.value };
-    fetch('/api/v1/playlists',
-      { method: "POST",
-      body: JSON.stringify(fetchBody)
-      })
-      .then((response) => {
-        let playlist = response.json();
-        return playlist;
-      }).then((response) => {
-        this.setState({
-          currentPlaylist: response
-        });
-      });
-  }
-
-
-  getCustomPlaylist(event){
-    // let fetchBody = { playlist_id: , timeslot_id: };
-    let fetchBody = { name: event.target.value, time };
-
-    fetch('/api/v1/customplaylists',
-      { method: "POST",
-      body: JSON.stringify(fetchBody)
-      })
-      .then((response) => {
-        alert("Playlist saved to selected timeslot!");
-      });
-  }
+  //
+  // getManualPlaylist(event){
+  //   let fetchBody = { name: event.target.value };
+  //   fetch('/api/v1/playlists',
+  //     { method: "POST",
+  //     body: JSON.stringify(fetchBody)
+  //     })
+  //     .then((response) => {
+  //       let playlist = response.json();
+  //       return playlist;
+  //     }).then((response) => {
+  //       this.setState({
+  //         currentPlaylist: response
+  //       });
+  //     });
+  // }
+  //
+  // getPlaylistAuto () {
+  //   $.ajax({
+  //       method: "GET",
+  //       url: "/api/v1/playlists",
+  //     })
+  //     .done(data => {
+  //       let time = data[1].time;
+  //       let timeString = time.toString();
+  //       this.setState({
+  //         currentPlaylist: data[0],
+  //         nextPlaylist: data[1],
+  //         nextTime: data[2]
+  //       });
+  //     });
+  //
+  // }
+  //
+  //
+  // getCustomPlaylist(){
+  //   let fetchBody = { playlist_id: 1, timeslot_id: 1};
+  //
+  //   fetch('/api/v1/customplaylists',
+  //     { method: "POST",
+  //     body: JSON.stringify(fetchBody)
+  //     })
+  //     .then((response) => {
+  //       // alert("Playlist saved to selected timeslot!");
+  //     });
+  // }
 
   render(){
       return(
         <div>
         <CustomSongSelect
-          getCustomPlaylist={this.getCustomPlaylist}
         />
+        <br/>
         <Playlist
           key={this.state.currentPlaylist.id}
           name={this.state.currentPlaylist.name}

@@ -15,4 +15,11 @@ Rails.application.routes.draw do
       resources :playlists
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :custom_playlists
+    end
+  end
+
 end

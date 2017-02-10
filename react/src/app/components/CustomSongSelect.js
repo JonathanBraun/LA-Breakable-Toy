@@ -1,232 +1,75 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Playlist from '../components/Playlist';
+import PlaylistStatus from '../components/PlaylistStatus';
+import CustomDropDownSelect from '../components/CustomDropDownSelect';
 
-const CustomSongSelect = props => {
+class CustomSongSelect extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      timeslots: [],
+      user_playlists: []
+    };
+  }
+
+  componentDidMount(){
+    $.ajax({
+        method: "GET",
+        url: "/api/v1/custom_playlists",
+      })
+      .done(data => {
+        this.setState({
+          timeslots: data.timeslots,
+          user_playlists: data.user_playlists
+        });
+      });
+  }
+
+  setTimeslot(event){
+    console.log(event.target);
+      // let fetchBody = { playlist_id: event.target.playlist_id, timeslot_id: event.target.timeslot_id};
+      //
+      // fetch('/api/v1/customplaylists',
+      //   { method: "POST",
+      //   body: JSON.stringify(fetchBody)
+      //   })
+      //   .then((response) => {
+      //     // alert("Playlist saved to selected timeslot!");
+      //   });
+  }
+
+render() {
+  let timeslots = this.state.timeslots.map(timeslot => {
+      return(
+        <CustomDropDownSelect
+          key={timeslot.id}
+          timeslot={timeslot}
+          user_playlist={this.state.user_playlists}
+          setTimeslot={setTimeslot()}
+         />
+      );
+    });
 
   return(
     <div>
-    <ul className="accordion" data-accordion>
-      <li className="accordion-navigation">
-        <a href="#panel1a">Accordion 1</a>
-        <div id="panel1a" className="content active">
-        <table>
-          <thead>
-          <tr>
-             <th>Time Slot</th>
-             <th>Playlist</th>
-          </tr>
-          </thead>
-          <tfoot>
-          <tr>
-              <td>12am-2am</td>
-              <td>
-              <form action="" method="">
-                <select id="dropdown" onChange={props.getCustomPlaylist}>
-                  <option value="Get Up & Go">Get Up & Go</option>
-                  <option value="Inspiration">Inspiration</option>
-                  <option value="Relaxation">Relaxation</option>
-                  <option selected value="Taking Care of Business">Taking Care of Business</option>
-                  <option value="Americana">Americana</option>
-                  <option value="Love Songs">Love Songs</option>
-                  <option value="Heartache">Heartache</option>
-                  <option value="Evening Wind Down">Evening Wind Down</option>
-                </select>
-              </form>
-              </td>
-          </tr>
-          <tr>
-             <td>2am-4am</td>
-             <td>
-             <form action="" method="">
-               <select id="dropdown" onChange={props.getCustomPlaylist}>
-                 <option value="Get Up & Go">Get Up & Go</option>
-                 <option value="Inspiration">Inspiration</option>
-                 <option value="Relaxation">Relaxation</option>
-                 <option selected value="Taking Care of Business">Taking Care of Business</option>
-                 <option value="Americana">Americana</option>
-                 <option value="Love Songs">Love Songs</option>
-                 <option value="Heartache">Heartache</option>
-                 <option value="Evening Wind Down">Evening Wind Down</option>
-               </select>
-             </form>
-             </td>
-          </tr>
-          <tr>
-              <td>4am-6am</td>
-              <td>
-              <form action="" method="">
-                <select id="dropdown" onChange={props.getCustomPlaylist}>
-                  <option value="Get Up & Go">Get Up & Go</option>
-                  <option value="Inspiration">Inspiration</option>
-                  <option value="Relaxation">Relaxation</option>
-                  <option selected value="Taking Care of Business">Taking Care of Business</option>
-                  <option value="Americana">Americana</option>
-                  <option value="Love Songs">Love Songs</option>
-                  <option value="Heartache">Heartache</option>
-                  <option value="Evening Wind Down">Evening Wind Down</option>
-                </select>
-              </form>
-              </td>
-          </tr>
-          <tr>
-              <td>6am-8am</td>
-              <td>
-              <form action="" method="">
-                <select id="dropdown" onChange={props.getCustomPlaylist}>
-                  <option value="Get Up & Go">Get Up & Go</option>
-                  <option value="Inspiration">Inspiration</option>
-                  <option value="Relaxation">Relaxation</option>
-                  <option selected value="Taking Care of Business">Taking Care of Business</option>
-                  <option value="Americana">Americana</option>
-                  <option value="Love Songs">Love Songs</option>
-                  <option value="Heartache">Heartache</option>
-                  <option value="Evening Wind Down">Evening Wind Down</option>
-                </select>
-              </form>
-              </td>
-          </tr>
-          <tr>
-              <td>8am-10am</td>
-              <td>
-              <form action="" method="">
-                <select id="dropdown" onChange={props.getCustomPlaylist}>
-                  <option value="Get Up & Go">Get Up & Go</option>
-                  <option value="Inspiration">Inspiration</option>
-                  <option value="Relaxation">Relaxation</option>
-                  <option selected value="Taking Care of Business">Taking Care of Business</option>
-                  <option value="Americana">Americana</option>
-                  <option value="Love Songs">Love Songs</option>
-                  <option value="Heartache">Heartache</option>
-                  <option value="Evening Wind Down">Evening Wind Down</option>
-                </select>
-              </form>
-              </td>
-          </tr>
-          <tr>
-              <td>10am-12pm</td>
-              <td>
-              <form action="" method="">
-                <select id="dropdown" onChange={props.getCustomPlaylist}>
-                  <option value="Get Up & Go">Get Up & Go</option>
-                  <option value="Inspiration">Inspiration</option>
-                  <option value="Relaxation">Relaxation</option>
-                  <option selected value="Taking Care of Business">Taking Care of Business</option>
-                  <option value="Americana">Americana</option>
-                  <option value="Love Songs">Love Songs</option>
-                  <option value="Heartache">Heartache</option>
-                  <option value="Evening Wind Down">Evening Wind Down</option>
-                </select>
-              </form>
-              </td>
-          </tr>
-          <tr>
-              <td>12pm-2pm</td>
-              <td>
-              <form action="" method="">
-                <select id="dropdown" onChange={props.getCustomPlaylist}>
-                  <option value="Get Up & Go">Get Up & Go</option>
-                  <option value="Inspiration">Inspiration</option>
-                  <option value="Relaxation">Relaxation</option>
-                  <option selected value="Taking Care of Business">Taking Care of Business</option>
-                  <option value="Americana">Americana</option>
-                  <option value="Love Songs">Love Songs</option>
-                  <option value="Heartache">Heartache</option>
-                  <option value="Evening Wind Down">Evening Wind Down</option>
-                </select>
-              </form>
-              </td>
-          </tr>
-          <tr>
-              <td>2pm-4pm</td>
-              <td>
-              <form action="" method="">
-                <select id="dropdown" onChange={props.getCustomPlaylist}>
-                  <option value="Get Up & Go">Get Up & Go</option>
-                  <option value="Inspiration">Inspiration</option>
-                  <option value="Relaxation">Relaxation</option>
-                  <option selected value="Taking Care of Business">Taking Care of Business</option>
-                  <option value="Americana">Americana</option>
-                  <option value="Love Songs">Love Songs</option>
-                  <option value="Heartache">Heartache</option>
-                  <option value="Evening Wind Down">Evening Wind Down</option>
-                </select>
-              </form>
-              </td>
-          </tr>
-          <tr>
-              <td>4pm-6pm</td>
-              <td>
-              <form action="" method="">
-                <select id="dropdown" onChange={props.getCustomPlaylist}>
-                  <option value="Get Up & Go">Get Up & Go</option>
-                  <option value="Inspiration">Inspiration</option>
-                  <option value="Relaxation">Relaxation</option>
-                  <option selected value="Taking Care of Business">Taking Care of Business</option>
-                  <option value="Americana">Americana</option>
-                  <option value="Love Songs">Love Songs</option>
-                  <option value="Heartache">Heartache</option>
-                  <option value="Evening Wind Down">Evening Wind Down</option>
-                </select>
-              </form>
-              </td>
-          </tr>
-          <tr>
-              <td>6pm-8pm</td>
-              <td>
-                <form action="" method="">
-                <select id="dropdown" onChange={props.getCustomPlaylist}>
-                  <option value="Get Up & Go">Get Up & Go</option>
-                  <option value="Inspiration">Inspiration</option>
-                  <option value="Relaxation">Relaxation</option>
-                  <option selected value="Taking Care of Business">Taking Care of Business</option>
-                  <option value="Americana">Americana</option>
-                  <option value="Love Songs">Love Songs</option>
-                  <option value="Heartache">Heartache</option>
-                  <option value="Evening Wind Down">Evening Wind Down</option>
-                </select>
-              </form>
-              </td>
-          </tr>
-          <tr>
-              <td>8pm-10pm</td>
-              <td>
-              <form action="" method="">
-                <select id="dropdown" onChange={props.getCustomPlaylist}>
-                  <option value="Get Up & Go">Get Up & Go</option>
-                  <option value="Inspiration">Inspiration</option>
-                  <option value="Relaxation">Relaxation</option>
-                  <option selected value="Taking Care of Business">Taking Care of Business</option>
-                  <option value="Americana">Americana</option>
-                  <option value="Love Songs">Love Songs</option>
-                  <option value="Heartache">Heartache</option>
-                  <option value="Evening Wind Down">Evening Wind Down</option>
-                </select>
-              </form>
-              </td>
-          </tr>
-          <tr>
-              <td>10pm-12am</td>
-              <td>
-              <form action="" method="">
-                <select id="dropdown" onChange={props.getCustomPlaylist}>
-                  <option value="Get Up & Go">Get Up & Go</option>
-                  <option value="Inspiration">Inspiration</option>
-                  <option value="Relaxation">Relaxation</option>
-                  <option selected value="Taking Care of Business">Taking Care of Business</option>
-                  <option value="Americana">Americana</option>
-                  <option value="Love Songs">Love Songs</option>
-                  <option value="Heartache">Heartache</option>
-                  <option value="Evening Wind Down">Evening Wind Down</option>
-                </select>
-              </form>
-              </td>
-          </tr>
-          </tfoot>
-        </table>
-        </div>
-      </li>
-    </ul>
+      <table>
+        <thead>
+        <tr>
+           <th>Time: AM</th>
+           <th>Playlist</th>
+
+           <th>Time: PM</th>
+           <th>Playlist</th>
+        </tr>
+        </thead>
+        <tfoot>
+          {timeslots}
+        </tfoot>
+      </table>
     </div>
+
   );
-};
+  }
+}
 
 export default CustomSongSelect;
