@@ -31,13 +31,13 @@ class CustomSongSelect extends Component {
   }
 
   getPlaylistAuto () {
+    console.log("what the fuck");
     fetch("/api/v1/custom_playlists/0",
       { credentials: "include"})
       .then((response) => {
         let playlist = response.json()
         return playlist
       }).then(playlist => {
-        debugger;
         this.setState({
           currentPlaylist: playlist
         });
@@ -60,8 +60,10 @@ class CustomSongSelect extends Component {
         })
         .then((message) => {
           alert(`${message.message}`);
+          this.getPlaylistAuto();
           // alert("Playlist saved to selected timeslot!");
         });
+
   }
 
 render() {
