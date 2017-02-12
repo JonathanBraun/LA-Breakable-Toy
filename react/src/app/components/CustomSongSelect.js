@@ -9,6 +9,7 @@ class CustomSongSelect extends Component {
     this.state = {
       timeslots: [],
       user_playlists: [],
+      custom_playlist_timeslots: [],
       currentPlaylist: {id: null, name: null, url: null, time: null}
     };
     this.setTimeslot = this.setTimeslot.bind(this);
@@ -23,10 +24,11 @@ class CustomSongSelect extends Component {
       .done(data => {
         this.setState({
           timeslots: data.timeslots,
-          user_playlists: data.user_playlists
+          user_playlists: data.user_playlists,
+          custom_playlist_timeslots: data.custom_playlist_timeslots
         });
       });
-      // let interval = setInterval(this.getPlaylistAuto, 5000 );
+      let interval = setInterval(this.getPlaylistAuto, 5000 );
       this.getPlaylistAuto();
   }
 

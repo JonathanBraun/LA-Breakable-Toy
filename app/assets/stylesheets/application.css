@@ -22,11 +22,12 @@ body {
   position: absolute;
   top: 0;
   left: 0;*/
-  min-height:600px;
+  min-height:1100px;
   max-height:1800px;
   background-image: url("jeff-golenski-stars.jpg");
-  background-size: cover;
+  background-size:cover;
   background-repeat: no-repeat;
+  background-position: 10% 50%;
   height:100%;
   color: white;
   font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
@@ -85,26 +86,87 @@ body {
 table, th, td, thead th, thead td, tfoot th, tfoot td {
     /*border: 1px solid black;*/
     text-align: center;
-    padding: 0px;
-    padding-top: 8px;
-    font-size: 22px;
-    background-color: none;
+    /*padding: 0px;*/
+    /*padding-top: 8px;*/
+    /*background-color: transparent;*/
+    color: white;
+    background: none;
+    border: 2px solid #282828;
 }
 
 table {
-  width: 700px;
+  width: 400px;
   margin: auto;
   background-position: center;
   padding-bottom: 0px;
+  font-family: Futura;
+  height: auto;
+  background-color: #181818;
+  background-size: auto;
+
+  /*font-size: 14;*/
+  /*-webkit-border-horizontal-spacing: 5px;
+  -webkit-border-vertical-spacing: 5px;*/
+}
+
+td {
+  font-size: 16px;
   background-color: none;
+  line-height: 0.5px;
+  height: 0px;
+}
+
+thead {
+  max-width: auto;
+  font-size: 16px;
+  background-color: none;
+}
+
+th {
+  background-color: none;
+  padding-bottom: 10px;
+}
+
+td {
+  max-width: 200px;
+  background-color: none;
+  padding: none;
 }
 
 form {
   padding-bottom: 0px;
+  line-height: normal;
 }
 
+select {
+  width: auto;
+  /*font-size:1.2rem;*/
+  font-family: Futura;
+  font-size: .85vmax;
+  /*padding-top: 10px;*/
+}
+
+.transparent {
+  width: auto;
+  background: transparent;
+  color: white;
+  /*height: 2vmax;*/
+  padding: none;
+  margin-bottom: none;
+}
+
+.transparent:focus {
+  width: auto;
+  background: transparent;
+  color: white;
+  /*height: 2vmax;*/
+  padding: none;
+  margin-bottom: none;
+}
+
+
 h1, h2, h3, h4, h5 {
-  font-family: 'Ostrich Sans';
+  font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;;
 }
 
 a {
@@ -119,22 +181,22 @@ a:hover {
   color: #479CE5;
 }
 
-td {
-  max-width: 200px;
+div.callout.small.secondary {
+  font-size: 1.3vmax;
 }
+
 
 h2 {
   padding-left: 13px;
 }
 
 h5 {
-  font-size: 50px;
+  font-size: 3.1vmax;
 }
 
 h6 {
-  font-size: 30px;
+  font-size: 1.2vmax;
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-  font-size: 24px;
   font-style: normal;
   font-variant: normal;
   font-weight: 500;
@@ -142,7 +204,7 @@ h6 {
 }
 
 li {
-  font-size: 30px;
+  font-size: 20px;
   list-style: none;
 }
 
@@ -160,17 +222,22 @@ i {
   color:black;
 }
 
+.userSelectedBackground,.userSelectedBackground:nth-of-type(even),
+.userSelectedBackground:nth-of-type(odd) {
+  background-color: none;
+}
+
 
 em {
   font-size: 20px;
   color: black;
 }
 
-select {
-  font-size: 20px;
-  width: auto;
-  padding-top: 10px;
+input {
+  font-size: 18px;
 }
+
+
 
 /*label {
   text-align: left;
@@ -204,26 +271,48 @@ ul {
   color: black;
 }
 
+.menu-icon {
+  color: gray;
+}
+
 .unhappy{
   font-size: 1.5rem;
   font-family: Futura;
 }
 
 .title {
-  font-family: 'Ostrich Sans';
+  font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
   font-weight: bold;
   color: white;
-  font-size: 150px;
+  font-size: 9.5vmax;
   margin-bottom: 0px;
   line-height: .95;
 }
 
 .playlist-title {
-  font-family: 'Ostrich Sans';
+  font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
   font-weight: bold;
   color: white;
-  font-size: 80px;
+  font-size: 6vmax;
   margin-bottom: 0px;
+  line-height: .95;
+}
+
+.custom-schedule-title {
+  font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 5vmax;
+  margin-bottom: 8px;
+  line-height: .95;
+}
+
+.log-in-title {
+  font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 5vmax;
+  margin-bottom: 8px;
   line-height: .95;
 }
 
@@ -240,6 +329,15 @@ ul {
   font-size: 25px;
   color: black;
 }
+
+/*.float-left {
+  float:left;
+}
+
+.float-right {
+  float:right;
+}*/
+
 
 #schedule {
   background-position: center;

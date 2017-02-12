@@ -21,7 +21,7 @@ class Api::V1::CustomPlaylistsController < ApplicationController
 
     custom_playlist_timeslots = CustomPlaylistTimeslot.all
 
-    render json: {user_playlists: user_playlists, timeslots: timeslots }
+    render json: {user_playlists: user_playlists, timeslots: timeslots, custom_playlist_timeslots: custom_playlist_timeslots }
   end
 
   def new

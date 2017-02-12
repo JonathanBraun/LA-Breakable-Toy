@@ -15,17 +15,19 @@ class CustomPlaylistContainer extends Component {
 
   render(){
       return(
-        <div>
-        <CustomSongSelect
-        />
-        <br/>
-        <br/>
-        <Playlist
-          key={this.state.currentPlaylist.id}
-          name={this.state.currentPlaylist.name}
-          url={this.state.currentPlaylist.url}
-          time={this.state.currentPlaylist.time}
-        />
+        <div className="schedule">
+          <div>
+            <CustomSongSelect
+            />
+          </div>
+          <div>
+            <Playlist
+              key={this.state.currentPlaylist.id}
+              name={this.state.currentPlaylist.name}
+              url={this.state.currentPlaylist.url}
+              time={this.state.currentPlaylist.time}
+            />
+          </div>
         </div>
       );
   }

@@ -6,7 +6,7 @@ const CustomDropDownSelect = props => {
         <td>{props.timeslot.begin_time}-{props.timeslot.end_time}</td>
         <td>
         <form action="" method="">
-          <select id="dropdown" onChange={props.setTimeslot}>
+          <select className='transparent' onChange={props.setTimeslot}>
             <option value="Get Up & Go">Get Up & Go</option>
             <option value="Inspiration">Inspiration</option>
             <option value="Relaxation">Relaxation</option>

@@ -21,13 +21,13 @@ describe('PlaylistStatus', function() {
 
 
   it('should render an h6 tag with the text "Taking Care of Business"', () => {
-    expect(wrapper.find('h6').text()).toBe('Current Playlist: Taking Care of Business || Next Playlist: Americana || Scheduled Start Time: 16:00');
+    expect(wrapper.find('h6').text()).toBe('Current Playlist: Taking Care of Business  // Next Playlist: Americana  // Scheduled Start Time: 16:00');
   });
 
   it('should render an h6 tag with the specific props', () => {
     expect(wrapper.find('h6').props()).toEqual({
       className: 'row text-center white-text',
-      children: [ 'Current Playlist: ', 'Taking Care of Business', ' || Next Playlist: ', 'Americana', ' || Scheduled Start Time: ', '16:00' ]
+      children: [ 'Current Playlist: ', 'Taking Care of Business', '  // Next Playlist: ', 'Americana', '  // Scheduled Start Time: ', '16:00' ]
     });
   });
 
