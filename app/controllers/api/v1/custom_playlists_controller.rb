@@ -19,6 +19,16 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       end
     end
 
+    # binding.pry
+
+    if CustomPlaylistTimeslot.last.user_playlist.user_id != UserPlaylist.where(user_id: current_user).last.user_id
+      timeslots.each do |timeslot|
+        CustomPlaylistTimeslot.last.user_playlist.update_attributes(user_id: current_user.id)
+      end
+      # binding.pry
+    end
+
+
     custom_playlist_timeslots = CustomPlaylistTimeslot.all
 
     render json: {user_playlists: user_playlists, timeslots: timeslots, custom_playlist_timeslots: custom_playlist_timeslots }
@@ -56,7 +66,7 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
       user_playlists = UserPlaylist.where(user: current_user)
       custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[0].user_playlist.playlist
+      playlist = custom_playlist[-1].user_playlist.playlist
 
       render json: playlist
     elsif Time.now.strftime( "%H" ).to_i >= 2 && Time.now.strftime( "%H" ).to_i < 4
@@ -64,7 +74,7 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
       user_playlists = UserPlaylist.where(user: current_user)
       custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[0].user_playlist.playlist
+      playlist = custom_playlist[-1].user_playlist.playlist
 
       render json: playlist
     elsif Time.now.strftime( "%H" ).to_i >= 4 && Time.now.strftime( "%H" ).to_i < 6
@@ -72,7 +82,7 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
       user_playlists = UserPlaylist.where(user: current_user)
       custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[0].user_playlist.playlist
+      playlist = custom_playlist[-1].user_playlist.playlist
 
       render json: playlist
     elsif Time.now.strftime( "%H" ).to_i >= 6 && Time.now.strftime( "%H" ).to_i < 8
@@ -80,7 +90,7 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
       user_playlists = UserPlaylist.where(user: current_user)
       custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[0].user_playlist.playlist
+      playlist = custom_playlist[-1].user_playlist.playlist
 
       render json: playlist
     elsif Time.now.strftime( "%H" ).to_i >= 8 && Time.now.strftime( "%H" ).to_i < 10
@@ -88,7 +98,7 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
       user_playlists = UserPlaylist.where(user: current_user)
       custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[0].user_playlist.playlist
+      playlist = custom_playlist[-1].user_playlist.playlist
 
       render json: playlist
     elsif Time.now.strftime( "%H" ).to_i >= 10 && Time.now.strftime( "%H" ).to_i < 12
@@ -96,7 +106,7 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
       user_playlists = UserPlaylist.where(user: current_user)
       custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[0].user_playlist.playlist
+      playlist = custom_playlist[-1].user_playlist.playlist
 
       render json: playlist
     elsif Time.now.strftime( "%H" ).to_i >= 12 && Time.now.strftime( "%H" ).to_i < 14
@@ -120,7 +130,7 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
       user_playlists = UserPlaylist.where(user: current_user)
       custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[0].user_playlist.playlist
+      playlist = custom_playlist[-1].user_playlist.playlist
 
       render json: playlist
     elsif Time.now.strftime( "%H" ).to_i >= 18 && Time.now.strftime( "%H" ).to_i < 20
@@ -128,7 +138,7 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
       user_playlists = UserPlaylist.where(user: current_user)
       custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[0].user_playlist.playlist
+      playlist = custom_playlist[-1].user_playlist.playlist
 
       render json: playlist
     elsif Time.now.strftime( "%H" ).to_i >= 20 && Time.now.strftime( "%H" ).to_i < 22
@@ -136,7 +146,7 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
       user_playlists = UserPlaylist.where(user: current_user)
       custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[0].user_playlist.playlist
+      playlist = custom_playlist[-1].user_playlist.playlist
 
       render json: playlist
     elsif Time.now.strftime( "%H" ).to_i >= 22 && Time.now.strftime( "%H" ).to_i < 24
@@ -144,7 +154,7 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
       user_playlists = UserPlaylist.where(user: current_user)
       custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[0].user_playlist.playlist
+      playlist = custom_playlist[-1].user_playlist.playlist
 
       render json: playlist
     end
