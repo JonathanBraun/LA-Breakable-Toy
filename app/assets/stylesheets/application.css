@@ -258,14 +258,16 @@ ul {
   font-size: 1.2rem;
 }
 
-
+#user_username {
+  font-family: Futura;
+  font-size: 1.2rem;
+}
 
 [type='email']{
   font-family: Futura;
   font-size: 1.2rem;
 }
 
-  /*[type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea*/
 
 .lefty {
   text-align: left;
