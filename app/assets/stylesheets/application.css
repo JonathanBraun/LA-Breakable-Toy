@@ -190,13 +190,13 @@ h2 {
   padding-left: 13px;
 }
 
-h4 {
-  font-family: 'Futura';
-  font-size: 2vmax;
-}
-
 h3 {
   font-size: 2.3vmax;
+}
+
+h4 {
+  font-family: 'Futura';
+  font-size: 1.3vmax;
 }
 
 h5 {
