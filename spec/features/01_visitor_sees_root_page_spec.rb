@@ -7,6 +7,6 @@ feature "visitor sees homepage" do
 
     expect(page).to have_content "Sonic Sifter"
     expect(page).to have_content "Open-Minded Music for Open-Minded People"
-    expect(page).to have_content "Current Time"
+    expect(page).to have_content "Time"
   end
 end

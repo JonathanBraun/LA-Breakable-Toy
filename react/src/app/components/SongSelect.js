@@ -3,8 +3,8 @@ import React from 'react';
 const SongSelect = props => {
 
   return(
-    <form action="" method="">
-      <label htmlFor="playlist">Switch Playlists:</label>
+    <form action="" method="" className="text-center">
+      <label className="text-center" htmlFor="playlist">Switch Playlists:</label>
       <select id="dropdown" onChange={props.getManualPlaylist}>
         <option value="Get Up & Go">Get Up & Go</option>
         <option value="Inspiration">Inspiration</option>

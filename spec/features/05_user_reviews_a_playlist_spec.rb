@@ -42,7 +42,7 @@ feature 'user signs in' do
 
     click_link playlist.name
 
-    expect(page).to have_content("Feedback on this Playlist")
+    expect(page).to have_content("Feedback on")
 
     fill_in "This playlist's rating:", with: 5
     fill_in "Additional feedback on this playlist?", with: "That was dope!"

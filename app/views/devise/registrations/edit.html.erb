@@ -1,12 +1,15 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
+<br>
+<div class="row text-center">
+<h2 class="playlist-title">Edit <%= resource_name.to_s.humanize %></h2>
+</div>
+<br>
 <div class="row text-center" id="add-background-light">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="form-element">
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, class: "lefty" %>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
@@ -15,21 +18,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password, class: "lefty" %> <i class="lefty">(leave blank if you don't want to change it)</i>
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em class="lefty"><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
-
+  <br/>
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, class: "lefty" %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password, class: "lefty" %> <i class="lefty">(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 </div>
@@ -38,9 +40,13 @@
   </div>
 <% end %>
 <br/>
-<h3>Cancel my account</h3>
+<br/>
+<h3 class="unhappy black-type">Unhappy?</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+<br/>
+<%= link_to "Back", :root, class: "black-type" %>
 </div>
+
+<br/>
+<br/>

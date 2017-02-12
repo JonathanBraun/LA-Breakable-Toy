@@ -39,7 +39,7 @@ feature 'user signs in' do
     expect(page).to have_content("User: user")
     expect(page).to have_content(review.body)
     expect(page).to have_content("Rating: 5")
-    click_link 'Edit review'
+    click_link 'Edit your review'
 
     expect(page).to have_content("This playlist's rating:")
     expect(page).to have_content("Additional feedback on this playlist?")

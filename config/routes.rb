@@ -8,10 +8,18 @@ Rails.application.routes.draw do
   end
 
   resources :reviews
+  resources :users, only: [:show]
 
   namespace :api do
     namespace :v1 do
       resources :playlists
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :custom_playlists
+    end
+  end
+
 end

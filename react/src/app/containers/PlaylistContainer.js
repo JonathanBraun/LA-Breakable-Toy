@@ -9,7 +9,7 @@ class PlaylistContainer extends Component {
     this.state = {
       manual: false,
       interval: null,
-      requestedPlaylistName: "",
+      nextTime: "",
       currentPlaylist: {id: null, name: null, url: null, time: null},
       nextPlaylist: {id: null, name: null, url: null, time: null}
     };
@@ -68,9 +68,11 @@ class PlaylistContainer extends Component {
       .done(data => {
         this.setState({
           currentPlaylist: data[0],
-          nextPlaylist: data[1]
+          nextPlaylist: data[1],
+          nextTime: data[2]
         });
       });
+
   }
 
   // getPlaylistAuto () {
@@ -113,7 +115,6 @@ class PlaylistContainer extends Component {
         </span>
         <SongSelect
           getManualPlaylist={this.getManualPlaylist}
-          handleSelect={this.handleSelect}
         />
         <Playlist
           key={this.state.currentPlaylist.id}
@@ -141,7 +142,7 @@ class PlaylistContainer extends Component {
             <PlaylistStatus
               name={this.state.currentPlaylist.name}
               nextName={this.state.nextPlaylist.name}
-              nextTime={this.state.nextPlaylist.time}
+              nextTime={this.state.nextTime}
              />
            </div>
         );

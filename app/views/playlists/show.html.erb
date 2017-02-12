@@ -1,11 +1,11 @@
 </br>
-<div class="row text-center white-text" id="show-playlist-banner">
-<h1><%= @playlist.name %></h1>
+<div class="row text-center white-text" >
+  <h3>Feedback on </h3>
+<h1 class="playlist-title"><%= @playlist.name %></h1>
 </div>
 
-
+</br>
 <div class="row text-center">
-<h3>Feedback on this Playlist</h3>
 <% if @reviews.empty? %>
 </br>
   <h4>We don't have any ratings for this playlist yet!</h4>
@@ -24,15 +24,17 @@
     <% if !current_user.nil? %>
       <% if current_user.id == review.user_id || current_user.admin? %>
       <div id="edit-review">
-        <%= link_to 'Edit review', edit_playlist_review_path(@playlist, review) %>
+        <%= link_to 'Edit your review', edit_playlist_review_path(@playlist, review) %>
       </div>
       <% end %>
+      </br>
     <% end %>
   <% end %>
 <% end %>
 </br>
 </div>
 
+</br>
 
 <div class="text-center" >
 <h3>Rate This Playlist</h3>
