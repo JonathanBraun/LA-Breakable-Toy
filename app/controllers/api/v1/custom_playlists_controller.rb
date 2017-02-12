@@ -19,13 +19,11 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       end
     end
 
-    # binding.pry
 
     if CustomPlaylistTimeslot.last.user_playlist.user_id != UserPlaylist.where(user_id: current_user).last.user_id
       timeslots.each do |timeslot|
         CustomPlaylistTimeslot.last.user_playlist.update_attributes(user_id: current_user.id)
       end
-      # binding.pry
     end
 
 
