@@ -6,7 +6,7 @@ const PlaylistStatus = props => {
     <div>
       <br/>
       <br/>
-      <h6 className="row text-center white-text">Current Playlist: {props.name} || Next Playlist: {props.nextName} || Scheduled Start Time: {props.nextTime}</h6>
+      <h6 className="row text-center white-text">Current Playlist: {props.name} 	&#47;&#47; Next Playlist: {props.nextName} 	&#47;&#47; Scheduled Start Time: {props.nextTime}</h6>
     </div>
   );
 };

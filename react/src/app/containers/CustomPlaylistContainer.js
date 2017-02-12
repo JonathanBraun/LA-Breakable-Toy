@@ -19,6 +19,7 @@ class CustomPlaylistContainer extends Component {
         <CustomSongSelect
         />
         <br/>
+        <br/>
         <Playlist
           key={this.state.currentPlaylist.id}
           name={this.state.currentPlaylist.name}

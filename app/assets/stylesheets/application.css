@@ -29,7 +29,7 @@ body {
   background-repeat: no-repeat;
   height:100%;
   color: white;
-  font-family: 'Ostrich Sans', Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
 }
 
 /*.background-image {
@@ -88,6 +88,7 @@ table, th, td, thead th, thead td, tfoot th, tfoot td {
     padding: 0px;
     padding-top: 8px;
     font-size: 22px;
+    background-color: none;
 }
 
 table {
@@ -95,6 +96,7 @@ table {
   margin: auto;
   background-position: center;
   padding-bottom: 0px;
+  background-color: none;
 }
 
 form {
@@ -106,8 +108,11 @@ h1, h2, h3, h4, h5 {
 }
 
 a {
-  font-size: 30px;
+  font-family: Futura;
+  font-weight: normal;
+  font-size: 20px;
   padding-left: 5px;
+  color: white;
 }
 
 a:hover {
@@ -167,16 +172,42 @@ select {
   padding-top: 10px;
 }
 
-/*ul {
-  width: 300px;
-  background: rgba(247,247,247, .7);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  padding: 20px 10px 20px 10px;
-  margin: auto;
+/*label {
+  text-align: left;
 }*/
 
+ul {
+  margin-left: 0rem;
+}
+
+/*[type='text'], */
+
+[type='password'] {
+  font-family: Futura;
+  font-size: 1.2rem;
+}
+
+
+
+[type='email']{
+  font-family: Futura;
+  font-size: 1.2rem;
+}
+
+  /*[type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea*/
+
+.lefty {
+  text-align: left;
+}
+
+.black-type{
+  color: black;
+}
+
+.unhappy{
+  font-size: 1.5rem;
+  font-family: Futura;
+}
 
 .title {
   font-family: 'Ostrich Sans';
@@ -184,15 +215,30 @@ select {
   color: white;
   font-size: 150px;
   margin-bottom: 0px;
+  line-height: .95;
 }
 
-.top-bar {
-  /*background-color: black;*/
+.playlist-title {
+  font-family: 'Ostrich Sans';
+  font-weight: bold;
+  color: white;
+  font-size: 80px;
+  margin-bottom: 0px;
+  line-height: .95;
+}
+
+.top-bar, .top-bar ul {
+  background-color: #030200;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1;
 }
 
 .form-element {
   max-width: 400px;
   margin: 0 auto;
+  font-size: 25px;
+  color: black;
 }
 
 #schedule {
@@ -201,12 +247,21 @@ select {
 }
 
 #add-background-light {
-  max-width: 800px;
+  max-width: 600px;
   background: rgba(247,247,247, .7);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-  padding: 50px 10px 50px 10px;
+  padding: 20px 10px 30px 10px;
+}
+
+#playlist-background-light {
+  max-width: 500px;
+  background: rgba(247,247,247, .7);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  padding: 20px 10px 30px 10px;
 }
 
 #edit-review {
