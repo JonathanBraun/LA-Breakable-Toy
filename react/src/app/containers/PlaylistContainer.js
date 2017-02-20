@@ -108,7 +108,7 @@ class PlaylistContainer extends Component {
         <span>
           <form name="test">
           <label className="checkbox-inline">
-          Manual &nbsp;
+          Deselect for Automatic &nbsp;
             <input onClick={this.handleClick} type="checkbox" name="checkgroup" id="auto_man"/>
           </label>
           </form>
@@ -128,7 +128,7 @@ class PlaylistContainer extends Component {
           <div>
             <span>
               <form name="test">
-                <label className="checkbox-inline">Automatic &nbsp;
+                <label className="checkbox-inline"> Select for Manual &nbsp;
                   <input onClick={this.handleClick} type="checkbox" name="checkgroup" id="auto_man"/>
                 </label>
               </form>
