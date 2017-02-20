@@ -68,7 +68,7 @@ body {
 }*/
 
 /*Regular Weight*/
-@font-face {
+/*@font-face {
   font-weight: normal;
   font-style: normal;
   font-family: 'Ostrich Sans';
@@ -77,10 +77,10 @@ body {
    src: url('ostrich-sans-normal.woff') format('woff');
    src: url('ostrich-sans-normal.ttf') format('truetype');
    src: url('ostrich-sans-normal.svg#webfont3AwWkQXK') format('svg');
-}
+}*/
 
 /*Bold Weight*/
-@font-face {
+/*@font-face {
   font-weight: bold;
   font-style: normal;
   font-family: 'Ostrich Sans';
@@ -89,10 +89,10 @@ body {
    src: url('ostrich-sans-bold.woff') format('woff');
    src: url('ostrich-sans-bold.ttf') format('truetype');
    src: url('ostrich-sans-bold.svg#webfont3AwWkQXK') format('svg');
-}
+}*/
 
 /*Italic Weight*/
-@font-face {
+/*@font-face {
   font-weight: bold;
   font-style: normal;
   font-family: 'Ostrich Sans';
@@ -101,6 +101,11 @@ body {
    src: url('ostrich-sans-inline-italic.woff') format('woff');
    src: url('ostrich-sans-inline-italic.ttf') format('truetype');
    src: url('ostrich-sans-inline-italic.svg#webfont3AwWkQXK') format('svg');
+}*/
+
+@font-face {
+  font-family: 'Ostrich Sans';
+  src: url('ostrich-sans-inline-bold.eot?') format('eot'), url('ostrich-sans-bold.woff') format('woff'), url('ostrich-sans-bold.ttf') format('truetype');
 }
 
 
