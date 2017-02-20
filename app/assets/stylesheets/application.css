@@ -105,7 +105,16 @@ body {
 
 @font-face {
   font-family: 'Ostrich Sans';
-  src: url('ostrich-sans-inline-bold.eot?') format('eot'), url('ostrich-sans-bold.woff') format('woff'), url('ostrich-sans-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  src: url('ostrich-sans-bold.eot?') format('eot'), url('ostrich-sans-bold.woff') format('woff'), url('ostrich-sans-bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ostrich Sans';
+  font-weight: normal;
+  font-style: normal;
+  src: url('ostrich-sans-regular.eot?') format('eot'), url('ostrich-sans-regular.woff') format('woff'), url('ostrich-sans-regular.ttf') format('truetype');
 }
 
 
