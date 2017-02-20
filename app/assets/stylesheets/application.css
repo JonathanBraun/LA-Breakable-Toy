@@ -16,93 +16,6 @@
 
  */
 
-body {
-  /*background: url("jeff-golenski-stars.jpg");
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;*/
-  min-height:1200px;
-  max-height:1800px;
-  background-image: url("jeff-golenski-stars.jpg");
-  background-size:cover;
-  background-repeat: no-repeat;
-  background-position: 10% 50%;
-  height:100%;
-  color: white;
-  font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
-}
-
-/*.background-image {
-   min-height:600px;
-   max-height:1200px;
-   background: url("jeff-golenski-stars.jpg");
-   background-size: cover;
-   background-repeat: no-repeat;
-   height:100%;
- }
-
-.bg {
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 5000;
-}
-
-#bgvid {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    /*background: url(Background_test2.jpg) no-repeat;*/
-    /*background-size: cover;
-}*/
-
-/*Regular Weight*/
-/*@font-face {
-  font-weight: normal;
-  font-style: normal;
-  font-family: 'Ostrich Sans';
-   src: url('ostrich-sans-normal.eot');
-   src: url('ostrich-sans-normal.eot?iefix') format('eot');
-   src: url('ostrich-sans-normal.woff') format('woff');
-   src: url('ostrich-sans-normal.ttf') format('truetype');
-   src: url('ostrich-sans-normal.svg#webfont3AwWkQXK') format('svg');
-}*/
-
-/*Bold Weight*/
-/*@font-face {
-  font-weight: bold;
-  font-style: normal;
-  font-family: 'Ostrich Sans';
-   src: url('ostrich-sans-bold.eot');
-   src: url('ostrich-sans-bold.eot?iefix') format('eot');
-   src: url('ostrich-sans-bold.woff') format('woff');
-   src: url('ostrich-sans-bold.ttf') format('truetype');
-   src: url('ostrich-sans-bold.svg#webfont3AwWkQXK') format('svg');
-}*/
-
-/*Italic Weight*/
-/*@font-face {
-  font-weight: bold;
-  font-style: normal;
-  font-family: 'Ostrich Sans';
-   src: url('ostrich-sans-inline-italic.eot');
-   src: url('ostrich-sans-inline-italic.eot?iefix') format('eot');
-   src: url('ostrich-sans-inline-italic.woff') format('woff');
-   src: url('ostrich-sans-inline-italic.ttf') format('truetype');
-   src: url('ostrich-sans-inline-italic.svg#webfont3AwWkQXK') format('svg');
-}*/
-
 @font-face {
   font-family: 'Ostrich Sans';
   font-weight: bold;
@@ -117,93 +30,6 @@ body {
   src: url('ostrich-sans-regular.eot?') format('eot'), url('ostrich-sans-regular.woff') format('woff'), url('ostrich-sans-regular.ttf') format('truetype');
 }
 
-
-table, th, td, thead th, thead td, tfoot th, tfoot td {
-    /*border: 1px solid black;*/
-    text-align: center;
-    /*padding: 0px;*/
-    /*padding-top: 8px;*/
-    /*background-color: transparent;*/
-    color: white;
-    background: none;
-    border: 2px solid #282828;
-}
-
-table {
-  width: 400px;
-  margin: auto;
-  background-position: center;
-  padding-bottom: 0px;
-  font-family: Futura;
-  height: auto;
-  background-color: #181818;
-  background-size: auto;
-
-  /*font-size: 14;*/
-  /*-webkit-border-horizontal-spacing: 5px;
-  -webkit-border-vertical-spacing: 5px;*/
-}
-
-td {
-  font-size: 16px;
-  background-color: none;
-  line-height: 0.5px;
-  height: 0px;
-}
-
-thead {
-  max-width: auto;
-  font-size: 16px;
-  background-color: none;
-}
-
-th {
-  background-color: none;
-  padding-bottom: 10px;
-}
-
-td {
-  max-width: 200px;
-  background-color: none;
-  padding: none;
-}
-
-form {
-  padding-bottom: 0px;
-  line-height: normal;
-}
-
-select {
-  width: auto;
-  /*font-size:1.2rem;*/
-  font-family: Futura;
-  font-size: .85vmax;
-  /*padding-top: 10px;*/
-}
-
-.transparent {
-  width: auto;
-  background: transparent;
-  color: white;
-  /*height: 2vmax;*/
-  padding: none;
-  margin-bottom: none;
-}
-
-.transparent:focus {
-  width: auto;
-  background: transparent;
-  color: white;
-  /*height: 2vmax;*/
-  padding: none;
-  margin-bottom: none;
-}
-
-
-h1, h2, h3, h5 {
-  font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;;
-}
-
 a {
   font-family: Futura;
   font-weight: normal;
@@ -216,10 +42,30 @@ a:hover {
   color: #479CE5;
 }
 
+body {
+  min-height:1200px;
+  max-height:1800px;
+  background-image: url("jeff-golenski-stars.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  height:100%;
+  color: white;
+  font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
+}
+
 div.callout.small.secondary {
   font-size: 1.3vmax;
 }
 
+em {
+  font-size: 20px;
+  color: black;
+}
+
+h1, h2, h3, h5 {
+  font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;;
+}
 
 h2 {
   padding-left: 13px;
@@ -247,6 +93,15 @@ h6 {
   line-height: 26.4px;
 }
 
+i {
+  font-size: 20px;
+  color: black;
+}
+
+input {
+  font-size: 18px;
+}
+
 li {
   font-size: 20px;
   list-style: none;
@@ -257,50 +112,66 @@ label {
   font-family: 'Futura', "Trebuchet MS", Arial, sans-serif;
 }
 
-i {
-  font-size: 20px;
-  color: black;
+
+form {
+  padding-bottom: 0px;
+  line-height: normal;
 }
 
-.field {
-  color:black;
+select {
+  width: auto;
+  font-family: Futura;
+  font-size: .85vmax;
 }
 
-.userSelectedBackground,.userSelectedBackground:nth-of-type(even),
-.userSelectedBackground:nth-of-type(odd) {
+table, th, td, thead th, thead td, tfoot th, tfoot td {
+    text-align: center;
+    color: white;
+    background: none;
+    border: 2px solid #282828;
+}
+
+table {
+  width: 400px;
+  margin: auto;
+  background-position: center;
+  padding-bottom: 0px;
+  font-family: Futura;
+  height: auto;
+  background-color: #181818;
+  background-size: auto;
+}
+
+td {
+  font-size: 16px;
+  background-color: none;
+  line-height: 0.5px;
+  height: 0px;
+}
+
+thead {
+  max-width: auto;
+  font-size: 16px;
   background-color: none;
 }
 
-
-em {
-  font-size: 20px;
-  color: black;
+th {
+  background-color: none;
+  padding-bottom: 10px;
 }
 
-input {
-  font-size: 18px;
+td {
+  max-width: 200px;
+  background-color: none;
+  padding: none;
 }
 
-
-
-/*label {
-  text-align: left;
-}*/
+textarea {
+  font-size: 22px;
+}
 
 ul {
   margin-left: 0rem;
-}
-
-/*[type='text'], */
-
-[type='password'] {
-  font-family: 'Futura';
-  font-size: 1.2rem;
-}
-
-#user_username {
-  font-family: 'Futura';
-  font-size: 1.2rem;
 }
 
 [type='email']{
@@ -308,44 +179,13 @@ ul {
   font-size: 1.2rem;
 }
 
-textarea {
-  font-size: 22px;
-}
-
-
-.lefty {
-  text-align: left;
+[type='password'] {
+  font-family: 'Futura';
+  font-size: 1.2rem;
 }
 
 .black-type{
   color: black;
-}
-
-.menu-icon {
-  color: gray;
-}
-
-.unhappy{
-  font-size: 1.5rem;
-  font-family: 'Futura';
-}
-
-.title {
-  font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
-  font-weight: bold;
-  color: white;
-  font-size: 9.5vmax;
-  margin-bottom: 0px;
-  line-height: .95;
-}
-
-.playlist-title {
-  font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
-  font-weight: normal;
-  color: white;
-  font-size: 5vmax;
-  margin-bottom: 0px;
-  line-height: .95;
 }
 
 .custom-schedule-title {
@@ -357,12 +197,68 @@ textarea {
   line-height: .95;
 }
 
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.field {
+  color:black;
+}
+
+.form-element {
+  max-width: 400px;
+  margin: 0 auto;
+  font-size: 25px;
+  color: black;
+}
+
+.lefty {
+  text-align: left;
+}
+
 .log-in-title {
   font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
   font-weight: normal;
   color: white;
   font-size: 5vmax;
   margin-bottom: 8px;
+  line-height: .95;
+}
+
+.menu-icon {
+  color: gray;
+}
+
+.playlist-title {
+  font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
+  font-weight: normal;
+  color: white;
+  font-size: 5vmax;
+  margin-bottom: 0px;
+  line-height: .95;
+}
+
+.title {
+  font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 9.5vmax;
+  margin-bottom: 0px;
   line-height: .95;
 }
 
@@ -373,25 +269,14 @@ textarea {
   line-height: 1;
 }
 
-.form-element {
-  max-width: 400px;
-  margin: 0 auto;
-  font-size: 25px;
-  color: black;
+.unhappy{
+  font-size: 1.5rem;
+  font-family: 'Futura';
 }
 
-/*.float-left {
-  float:left;
-}
-
-.float-right {
-  float:right;
-}*/
-
-
-#schedule {
-  background-position: center;
-  margin: auto;
+.userSelectedBackground,.userSelectedBackground:nth-of-type(even),
+.userSelectedBackground:nth-of-type(odd) {
+  background-color: none;
 }
 
 #add-background-light {
@@ -401,6 +286,11 @@ textarea {
   background-position: center;
   background-size: 100%;
   padding: 20px 10px 30px 10px;
+}
+
+#user_username {
+  font-family: 'Futura';
+  font-size: 1.2rem;
 }
 
 #playlist-background-light {
@@ -431,74 +321,7 @@ textarea {
   padding: 30px 10px 30px 10px;
 }
 
- .embed-container {
-     position: relative;
-     padding-bottom: 56.25%;
-     height: 0;
-     overflow: hidden;
-     max-width: 100%;
-     height: auto;
- }
-
- .embed-container iframe,
- .embed-container object,
- .embed-container embed {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
- }
-
- .onoffswitch {
-     position: relative; width: 90px;
-     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
- }
- .onoffswitch-checkbox {
-     display: none;
- }
- .onoffswitch-label {
-     display: block; overflow: hidden; cursor: pointer;
-     border: 2px solid #999999; border-radius: 20px;
- }
- .onoffswitch-inner {
-     display: block; width: 200%; margin-left: -100%;
-     transition: margin 0.3s ease-in 0s;
- }
- .onoffswitch-inner:before, .onoffswitch-inner:after {
-     display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-     font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
-     box-sizing: border-box;
- }
- .onoffswitch-inner:before {
-     content: "ON";
-     padding-left: 10px;
-     background-color: #34A7C1; color: #FFFFFF;
-     text-align: left;
- }
- .onoffswitch-inner:after {
-     content: "OFF";
-     padding-right: 10px;
-     background-color: #EEEEEE; color: #999999;
-     text-align: right;
- }
- .onoffswitch-switch {
-     display: block; width: 18px; height: 18px; margin: 6px;
-     background: #FFFFFF;
-     position: absolute; top: 0; bottom: 0;
-     right: 56px;
-     border: 2px solid #999999; border-radius: 20px;
-     transition: all 0.3s ease-in 0s;
- }
- .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-     margin-left: 0;
- }
- .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-     right: 0px;
- }
-
-
-  /*#boxy{
-    background-image: image_url('jeff-golenski-stars.jpg') no-repeat;
-    background-size: 100% 100%;
-  }*/
+#schedule {
+  background-position: center;
+  margin: auto;
+}
