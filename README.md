@@ -18,8 +18,11 @@ Users can also use a Manual mode to select any playlist from a dropdown.
 Registered users can also create a custom schedule to accommodate their daily activities or moods.
 ![alt text](http://i.imgur.com/xM23yHN.png)
 
-Users can also leave feedback on existing playlists
+Users can also leave feedback on existing playlists.
 ![alt text](http://i.imgur.com/kSlvykh.png)
+
+The application background also changes based on a user's time of day.
+![alt text](http://i.imgur.com/IisM17S.jpg)
 
 #Basics
 

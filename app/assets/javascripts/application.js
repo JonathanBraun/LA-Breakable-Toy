@@ -16,3 +16,23 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+
+$(document).ready(function(){
+	let day = new Date();
+	let hour = day.getHours();
+	if (hour >= 4 && hour < 6)
+	  document.body.className = "dawn";
+	else if (hour >= 6 && hour < 8)
+	  document.body.className = "sunrise";
+  else if (hour >= 8 && hour < 15)
+	  document.body.className = "day";
+  else if (hour >= 15 && hour < 18)
+    document.body.className = "afternoon";
+  else if (hour >= 18 && hour < 20)
+    document.body.className = "evening";
+  else if (hour >= 20 || hour < 24)
+    document.body.className = "night_1";
+  else if (hour >= 0 && hour < 4)
+	  document.body.className = "night_2";
+});
