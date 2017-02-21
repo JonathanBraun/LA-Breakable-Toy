@@ -20,12 +20,19 @@ Registered users can also create a custom schedule to accommodate their daily ac
 ![alt text](http://i.imgur.com/xM23yHN.png)
 
 Users can also leave feedback on existing playlists.
+<<<<<<< HEAD
 ![alt text](http://i.imgur.com/dgPLTAe.jpg)
 
 Additional time specific backgrounds.
 ![alt text](http://i.imgur.com/IisM17S.jpg)
 
 
+=======
+![alt text](http://i.imgur.com/kSlvykh.png)
+>>>>>>> 3edff8af978fe036f8fbc06cdfc4008ec70fc9fc
+
+The application background also changes based on a user's time of day.
+![alt text](http://i.imgur.com/IisM17S.jpg)
 
 #Basics
 
