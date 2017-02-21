@@ -43,12 +43,20 @@ a:hover {
 }
 
 body {
-  min-height:1200px;
+  min-height:900px;
   max-height:1800px;
-  background-image: url("jeff-golenski-stars.jpg");
+  /*background-image: url('1.Dawn-photo-nic-co-uk-nic-116850.jpg');*/
+
+  /*background-image: url('2.Sunrise-josep-castells-23322.jpg');*/
+
+  /*background-image: url('3.Day-jamie-macpherson-67533.jpg');*/
+  background-image: url('4.Afternoon - anna-anikina-31537.jpg');
+  /*background-image: url('5.Evening-austin-schmid-28822.jpg');*/
+  /*background-image: url('6.Night-jeff-golenski-stars.jpg');*/
+  /*background-image: url('7.Night-med-badr-chemmaoui-53463.jpg');*/
   background-size:cover;
   background-repeat: no-repeat;
-  background-position: 10% 50%;
+  background-position: top;
   height:100%;
   color: white;
   font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
@@ -110,6 +118,7 @@ li {
 label {
   font-size: 20px;
   font-family: 'Futura', "Trebuchet MS", Arial, sans-serif;
+  color: white;
 }
 
 
@@ -278,6 +287,73 @@ ul {
 .userSelectedBackground:nth-of-type(odd) {
   background-color: none;
 }
+
+/* backgrounds */
+/*.dawn {   min-height:1200px;
+  max-height:1800px;
+  background-image: url('1.Dawn-photo-nic-co-uk-nic-116850.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  height:100%;
+}
+
+.sunrise {   min-height:1200px;
+  max-height:1800px;
+  background-image: url('2.Sunrise-josep-castells-23322.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  height:100%;
+}
+
+.day {   min-height:1200px;
+  max-height:1800px;
+  background-image: url('3.Day-jamie-macpherson-67533.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  height:100%;
+}
+
+.afternoon {   min-height:1200px;
+  max-height:1800px;
+  background-image: url('4.Afternoon - anna-anikina-31537.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  height:100%;
+}
+
+.evening {
+  min-height:1000px;
+  max-height:1800px;
+  background-image: url('5.Evening-austin-schmid-28822.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  height:100%;
+}
+
+.night_1 {
+  min-height:1200px;
+  max-height:1800px;
+  background-image: url('6.Night-jeff-golenski-stars.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  height:100%;
+}
+
+.night_2 {
+  min-height:1400px;
+  max-height:1800px;
+  background-image: url('7.Night-med-badr-chemmaoui-53463.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: 30% 80%;
+  height:100%;
+}*/
 
 #add-background-light {
   max-width: 600px;
