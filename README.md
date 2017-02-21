@@ -11,7 +11,6 @@ http://sonic-sifter.herokuapp.com
 #About
 Sonic Sifter acts as a 24-hour playlist playing music specifically curated to a user's time of day, and complimented with time specific background images.  
 ![alt text](http://i.imgur.com/Oqj6zQo.jpg)
-![alt text](http://i.imgur.com/IisM17S.jpg)
 
 Users can also use a Manual mode to select any playlist from a dropdown.
 ![alt text](http://i.imgur.com/619bQpW.jpg)
