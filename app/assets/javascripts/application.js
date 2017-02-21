@@ -19,8 +19,8 @@ $(function(){ $(document).foundation(); });
 
 
 $(document).ready(function(){
-	let day = new Date();
-	let hour = day.getHours();
+	let date = new Date();
+	let hour = date.getHours();
 	if (hour >= 4 && hour < 6)
 	  document.body.className = "dawn";
 	else if (hour >= 6 && hour < 8)
