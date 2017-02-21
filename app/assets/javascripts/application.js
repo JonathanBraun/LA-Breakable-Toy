@@ -31,8 +31,8 @@ $(document).ready(function(){
     document.body.className = "afternoon";
   else if (hour >= 18 && hour < 20)
     document.body.className = "evening";
-  else if (hour >= 22 || hour < 1)
+  else if (hour >= 20 || hour < 24)
     document.body.className = "night_1";
-  else if (hour >=1 && hour < 4)
+  else if (hour >= 0 && hour < 4)
 	  document.body.className = "night_2";
 });
