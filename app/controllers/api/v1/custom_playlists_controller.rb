@@ -50,10 +50,10 @@ class Api::V1::CustomPlaylistsController < ApplicationController
 
     if custom_playlist_timeslot
       custom_playlist_timeslot.update_attributes(user_playlist: user_playlist)
-      render json: {message: "updated"}
+      render json: {message: "Timeslot updated!"}
     else
       CustomPlaylistTimeslot.create!(user_playlist_id: user_playlist.id, timeslot_id: timeslot )
-      render json: {message: "created"}
+      render json: {message: "Timeslot created!"}
     end
 
   end

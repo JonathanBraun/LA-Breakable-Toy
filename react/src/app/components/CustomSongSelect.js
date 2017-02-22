@@ -43,7 +43,6 @@ class CustomSongSelect extends Component {
           currentPlaylist: playlist
         });
       });
-
   }
 
   setTimeslot(timeslotId, event){
@@ -57,14 +56,11 @@ class CustomSongSelect extends Component {
         .then((response) => {
           let message = response.json();
           return message;
-          // alert("Playlist saved to selected timeslot!");
         })
         .then((message) => {
           alert(`${message.message}`);
           this.getPlaylistAuto();
-          // alert("Playlist saved to selected timeslot!");
         });
-
   }
 
 render() {
@@ -97,8 +93,6 @@ render() {
         url={this.state.currentPlaylist.url}
       />
     </div>
-
-
   );
   }
 }

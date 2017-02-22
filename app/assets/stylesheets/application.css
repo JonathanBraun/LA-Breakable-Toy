@@ -265,6 +265,22 @@ ul {
   line-height: 1;
 }
 
+.transparent {
+   width: auto;
+   background: transparent;
+   color: white;
+   padding: none;
+   margin-bottom: none;
+ }
+
+ .transparent:focus {
+   width: auto;
+   background: transparent;
+   color: white;
+   padding: none;
+   margin-bottom: none;
+ }
+
 .unhappy{
   font-size: 1.5rem;
   font-family: 'Futura';
