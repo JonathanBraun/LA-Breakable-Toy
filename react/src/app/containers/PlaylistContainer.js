@@ -59,7 +59,6 @@ class PlaylistContainer extends Component {
       });
   }
 
-
   getPlaylistAuto () {
     $.ajax({
         method: "GET",
@@ -91,10 +90,7 @@ class PlaylistContainer extends Component {
           getManualPlaylist={this.getManualPlaylist}
         />
         <Playlist
-          key={this.state.currentPlaylist.id}
-          name={this.state.currentPlaylist.name}
           url={this.state.currentPlaylist.url}
-          time={this.state.currentPlaylist.time}
         />
         </div>
       )} else {
@@ -108,10 +104,7 @@ class PlaylistContainer extends Component {
               </form>
             </span>
             <Playlist
-              key={this.state.currentPlaylist.id}
-              name={this.state.currentPlaylist.name}
               url={this.state.currentPlaylist.url}
-              time={this.state.currentPlaylist.time}
             />
             <PlaylistStatus
               name={this.state.currentPlaylist.name}
@@ -121,8 +114,6 @@ class PlaylistContainer extends Component {
            </div>
         );
       }
-
-
   }
 }
 
