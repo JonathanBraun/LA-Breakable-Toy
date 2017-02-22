@@ -75,32 +75,6 @@ class PlaylistContainer extends Component {
 
   }
 
-  // getPlaylistAuto () {
-  //   $.ajax({
-  //       method: "GET",
-  //       url: "/api/v1/playlists",
-  //     })
-  //     .done(data => {
-  //       console.log(data[0]);
-  //       console.log(this.state.currentPlaylist);
-  //       if (this.state.currentPlaylist != data[0]){
-  //         console.log("Hey Jon.");
-  //         this.setState({
-  //           currentPlaylist: data[0],
-  //           nextPlaylist: data[1]
-  //         });
-  //       } else {
-  //         console.log("Can you see me?");
-  //         alert(`There is a new playlist available for the current time slot. Just click the Play Button or if you'd like to continue listening to ${this.state.currentPlaylist.name} then switch over to manual mode.`);
-  //         this.setState({
-  //           currentPlaylist: data[0],
-  //           nextPlaylist: data[1]
-  //         });
-  //       }
-  //     });
-  // }
-
-
   render(){
     if (this.state.manual) {
       return(
