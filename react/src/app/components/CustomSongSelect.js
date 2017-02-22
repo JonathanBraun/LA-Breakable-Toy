@@ -93,8 +93,6 @@ render() {
         url={this.state.currentPlaylist.url}
       />
     </div>
-
-
   );
   }
 }
