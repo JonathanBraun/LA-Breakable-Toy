@@ -67,6 +67,8 @@ class CustomSongSelect extends Component {
 
 render() {
   let first_timeslots = this.state.first_custom_playlist_timeslots.map(timeslot => {
+      console.log(`first_timeslot: `);
+      console.log(timeslot);
       let timeFunction = (event) => this.setTimeslot(timeslot.id, event);
       return(
         <CustomDropDownSelect
@@ -78,6 +80,8 @@ render() {
       );
     });
     let second_timeslots = this.state.second_custom_playlist_timeslots.map(timeslot => {
+        console.log(`second_timeslot: `);
+        console.log(timeslot);
         let timeFunction = (event) => this.setTimeslot(timeslot.id, event);
         return(
           <CustomDropDownSelect
@@ -101,14 +105,9 @@ render() {
         </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              {this.state.first_custom_playlist_timeslots}
-            </td>
-            <td>
-              {this.state.second_custom_playlist_timeslots}
-            </td>
-          </tr>
+            {first_timeslots}
+
+            {second_timeslots}
         </tbody>
       </table>
       <Playlist

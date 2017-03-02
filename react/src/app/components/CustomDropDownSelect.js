@@ -18,7 +18,6 @@ const CustomDropDownSelect = props => {
           </select>
         </form>
         </td>
-
     </tr>
   );
 };
