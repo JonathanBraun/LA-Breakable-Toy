@@ -73,8 +73,6 @@ class CustomSongSelect extends Component {
   }
 
 render() {
-  console.log(`I'm in a render`);
-  console.log(this.state.currentPlaylist.url);
   let first_timeslots = this.state.timeslots_array.map(timeslot => {
       let timeFunction = (event) => this.setTimeslot(timeslot.id, event);
       return(
