@@ -10,9 +10,8 @@ class AppCustom extends Component {
 
   render() {
     return(
-      <div>
         <CustomPlaylistContainer />
-      </div>
+
     );
   }
 }

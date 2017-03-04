@@ -1,6 +1,7 @@
 class Api::V1::CustomPlaylistsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
+
   def index
     if UserPlaylist.where(user_id: current_user).empty?
       playlists = Playlist.all
@@ -9,8 +10,8 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       end
     end
 
-    timeslots = Timeslot.all
     user_playlists = UserPlaylist.all
+    timeslots = Timeslot.all
 
 
     if CustomPlaylistTimeslot.all.empty?
@@ -26,10 +27,32 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       end
     end
 
+    first_timeslots = Timeslot.first(6)
+    second_timeslots = Timeslot.last(6)
 
-    custom_playlist_timeslots = CustomPlaylistTimeslot.all
+    first_custom_playlist_timeslots = CustomPlaylistTimeslot.first(6)
+    second_custom_playlist_timeslots = CustomPlaylistTimeslot.last(6)
 
-    render json: {user_playlists: user_playlists, timeslots: timeslots, custom_playlist_timeslots: custom_playlist_timeslots }
+    timeslots_array =
+      [
+        first_timeslots[0],
+        first_timeslots[1],
+        first_timeslots[2],
+        first_timeslots[3],
+        first_timeslots[4],
+        first_timeslots[5],
+      ]
+    second_timeslots_array =
+    [
+      second_timeslots[0],
+      second_timeslots[1],
+      second_timeslots[2],
+      second_timeslots[3],
+      second_timeslots[4],
+      second_timeslots[5],
+    ]
+
+    render json: {user_playlists: user_playlists, first_timeslots: first_timeslots, second_timeslots: second_timeslots, first_custom_playlist_timeslots: first_custom_playlist_timeslots, second_custom_playlist_timeslots: second_custom_playlist_timeslots, timeslots_array: timeslots_array, second_timeslots_array: second_timeslots_array }
   end
 
   def new
@@ -59,102 +82,6 @@ class Api::V1::CustomPlaylistsController < ApplicationController
   end
 
   def show
-    if Time.now.strftime( "%H" ).to_i >= 0 && Time.now.strftime( "%H" ).to_i < 2
-      timeslot = Timeslot.find_by(begin_time: 0, end_time: 2)
-      custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
-      user_playlists = UserPlaylist.where(user: current_user)
-      custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[-1].user_playlist.playlist
-
-      render json: playlist
-    elsif Time.now.strftime( "%H" ).to_i >= 2 && Time.now.strftime( "%H" ).to_i < 4
-      timeslot = Timeslot.find_by(begin_time: 2, end_time: 4)
-      custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
-      user_playlists = UserPlaylist.where(user: current_user)
-      custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[-1].user_playlist.playlist
-
-      render json: playlist
-    elsif Time.now.strftime( "%H" ).to_i >= 4 && Time.now.strftime( "%H" ).to_i < 6
-      timeslot = Timeslot.find_by(begin_time: 4, end_time: 6)
-      custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
-      user_playlists = UserPlaylist.where(user: current_user)
-      custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[-1].user_playlist.playlist
-
-      render json: playlist
-    elsif Time.now.strftime( "%H" ).to_i >= 6 && Time.now.strftime( "%H" ).to_i < 8
-      timeslot = Timeslot.find_by(begin_time: 6, end_time: 8)
-      custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
-      user_playlists = UserPlaylist.where(user: current_user)
-      custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[-1].user_playlist.playlist
-
-      render json: playlist
-    elsif Time.now.strftime( "%H" ).to_i >= 8 && Time.now.strftime( "%H" ).to_i < 10
-      timeslot = Timeslot.find_by(begin_time: 8, end_time: 10)
-      custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
-      user_playlists = UserPlaylist.where(user: current_user)
-      custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[-1].user_playlist.playlist
-
-      render json: playlist
-    elsif Time.now.strftime( "%H" ).to_i >= 10 && Time.now.strftime( "%H" ).to_i < 12
-      timeslot = Timeslot.find_by(begin_time: 10, end_time: 12)
-      custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
-      user_playlists = UserPlaylist.where(user: current_user)
-      custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[-1].user_playlist.playlist
-
-      render json: playlist
-    elsif Time.now.strftime( "%H" ).to_i >= 12 && Time.now.strftime( "%H" ).to_i < 14
-      timeslot = Timeslot.find_by(begin_time: 12, end_time: 14)
-      custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
-      user_playlists = UserPlaylist.where(user: current_user)
-      custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[-1].user_playlist.playlist
-
-      render json: playlist
-    elsif Time.now.strftime( "%H" ).to_i >= 14 && Time.now.strftime( "%H" ).to_i < 16
-      timeslot = Timeslot.find_by(begin_time: 14, end_time: 16)
-      custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
-      user_playlists = UserPlaylist.where(user: current_user)
-      custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[-1].user_playlist.playlist
-
-      render json: playlist
-    elsif Time.now.strftime( "%H" ).to_i >= 16 && Time.now.strftime( "%H" ).to_i < 18
-      timeslot = Timeslot.find_by(begin_time: 16, end_time: 18)
-      custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
-      user_playlists = UserPlaylist.where(user: current_user)
-      custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[-1].user_playlist.playlist
-
-      render json: playlist
-    elsif Time.now.strftime( "%H" ).to_i >= 18 && Time.now.strftime( "%H" ).to_i < 20
-      timeslot = Timeslot.find_by(begin_time: 18, end_time: 20)
-      custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
-      user_playlists = UserPlaylist.where(user: current_user)
-      custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[-1].user_playlist.playlist
-
-      render json: playlist
-    elsif Time.now.strftime( "%H" ).to_i >= 20 && Time.now.strftime( "%H" ).to_i < 22
-      timeslot = Timeslot.find_by(begin_time: 20, end_time: 22)
-      custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
-      user_playlists = UserPlaylist.where(user: current_user)
-      custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[-1].user_playlist.playlist
-
-      render json: playlist
-    elsif Time.now.strftime( "%H" ).to_i >= 22 && Time.now.strftime( "%H" ).to_i < 24
-      timeslot = Timeslot.find_by(begin_time: 22, end_time: 24)
-      custom_playlist_timeslot = CustomPlaylistTimeslot.where(timeslot: timeslot)
-      user_playlists = UserPlaylist.where(user: current_user)
-      custom_playlist = custom_playlist_timeslot.where(user_playlist: user_playlists)
-      playlist = custom_playlist[-1].user_playlist.playlist
-
-      render json: playlist
-    end
+    render json: current_user.current_playlist
   end
 end

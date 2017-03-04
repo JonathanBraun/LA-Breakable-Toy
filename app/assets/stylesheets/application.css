@@ -127,8 +127,22 @@ table, th, td, thead th, thead td, tfoot th, tfoot td {
     border: 2px solid #282828;
 }
 
-table {
-  width: 400px;
+
+table.one {
+  width: 300px;
+  display:inline-block;
+  margin: auto;
+  background-position: center;
+  padding-bottom: 0px;
+  font-family: Futura;
+  height: auto;
+  background-color: #181818;
+  background-size: auto;
+}
+
+table.two {
+  width: 300px;
+  display:inline-block;
   margin: auto;
   background-position: center;
   padding-bottom: 0px;
@@ -156,11 +170,11 @@ th {
   padding-bottom: 10px;
 }
 
-td {
+/*td {
   max-width: 200px;
   background-color: none;
   padding: none;
-}
+}*/
 
 textarea {
   font-size: 22px;
