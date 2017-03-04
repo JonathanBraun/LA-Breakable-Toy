@@ -2,15 +2,20 @@ import React, { Component } from 'react';
 import Playlist from '../components/Playlist';
 import PlaylistStatus from '../components/PlaylistStatus';
 import CustomDropDownSelect from '../components/CustomDropDownSelect';
+import BeginTimeEndTime from '../components/BeginTimeEndTime';
+
+
 
 class CustomSongSelect extends Component {
   constructor(props){
     super(props);
     this.state = {
-      timeslots: [],
+      first_timeslots: [],
+      second_timeslots: [],
       user_playlists: [],
       first_custom_playlist_timeslots: [],
       second_custom_playlist_timeslots: [],
+      timeslots_array: [],
       currentPlaylist: {id: null, name: null, url: null, time: null}
     };
     this.setTimeslot = this.setTimeslot.bind(this);
@@ -24,10 +29,12 @@ class CustomSongSelect extends Component {
       })
       .done(data => {
         this.setState({
-          timeslots: data.timeslots,
+          first_timeslots: data.first_timeslots,
+          second_timeslots: data.second_timeslots,
           user_playlists: data.user_playlists,
           first_custom_playlist_timeslots: data.first_custom_playlist_timeslots,
-          second_custom_playlist_timeslots: data.second_custom_playlist_timeslots
+          second_custom_playlist_timeslots: data.second_custom_playlist_timeslots,
+          timeslots_array: data.timeslots_array
         });
       });
       let interval = setInterval(this.getPlaylistAuto, 5000 );
@@ -42,7 +49,7 @@ class CustomSongSelect extends Component {
         return playlist;
       }).then(playlist => {
         this.setState({
-          currentPlaylist: playlist
+          currentPlaylist: playlist[0]
         });
       });
   }
@@ -66,50 +73,66 @@ class CustomSongSelect extends Component {
   }
 
 render() {
-  let first_timeslots = this.state.first_custom_playlist_timeslots.map(timeslot => {
-      console.log(`first_timeslot: `);
-      console.log(timeslot);
+  console.log(`I'm in a render`);
+  console.log(this.state.currentPlaylist.url);
+  let first_timeslots = this.state.timeslots_array.map(timeslot => {
       let timeFunction = (event) => this.setTimeslot(timeslot.id, event);
       return(
-        <CustomDropDownSelect
-          key={timeslot.id}
-          timeslot={timeslot}
-          user_playlist={this.state.user_playlists}
-          setTimeslot={timeFunction}
-         />
+          <tr>
+            <BeginTimeEndTime
+              timeslot={timeslot}
+            />
+            <CustomDropDownSelect
+            key={timeslot.id}
+            user_playlist={this.state.user_playlists}
+            setTimeslot={timeFunction}
+            />
+          </tr>
       );
     });
-    let second_timeslots = this.state.second_custom_playlist_timeslots.map(timeslot => {
-        console.log(`second_timeslot: `);
-        console.log(timeslot);
+    let second_timeslots = this.state.second_timeslots.map(timeslot => {
         let timeFunction = (event) => this.setTimeslot(timeslot.id, event);
         return(
+          <tr>
+          <BeginTimeEndTime
+            timeslot={timeslot}
+          />
           <CustomDropDownSelect
             key={timeslot.id}
             timeslot={timeslot}
             user_playlist={this.state.user_playlists}
             setTimeslot={timeFunction}
            />
+           </tr>
         );
       });
 
   return(
     <div>
-      <table>
-        <thead>
-        <tr>
-           <th>Military Time:</th>
-           <th>Playlist</th>
-           <th>Military Time:</th>
-           <th>Playlist</th>
-        </tr>
-        </thead>
-        <tbody>
+      <div>
+        <table className="one">
+          <thead>
+          <tr>
+             <th>Military Time:</th>
+             <th>Playlist</th>
+          </tr>
+          </thead>
+          <tbody>
             {first_timeslots}
-
+          </tbody>
+        </table>
+        <table className="two">
+          <thead>
+          <tr>
+             <th>Military Time:</th>
+             <th>Playlist</th>
+          </tr>
+          </thead>
+          <tbody>
             {second_timeslots}
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
       <Playlist
         url={this.state.currentPlaylist.url}
       />

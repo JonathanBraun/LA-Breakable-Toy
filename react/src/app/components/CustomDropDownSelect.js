@@ -2,9 +2,7 @@ import React from 'react';
 
 const CustomDropDownSelect = props => {
   return(
-    <tr>
-        <td>{props.timeslot.begin_time}-{props.timeslot.end_time}</td>
-        <td>
+      <td>
         <form action="" method="">
           <select className='transparent' onChange={props.setTimeslot}>
             <option value="Get Up & Go">Get Up & Go</option>
@@ -17,8 +15,7 @@ const CustomDropDownSelect = props => {
             <option value="Evening Wind Down">Evening Wind Down</option>
           </select>
         </form>
-        </td>
-    </tr>
+      </td>
   );
 };
 

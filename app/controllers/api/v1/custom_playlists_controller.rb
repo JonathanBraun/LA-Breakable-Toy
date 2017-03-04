@@ -1,6 +1,7 @@
 class Api::V1::CustomPlaylistsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
+
   def index
     if UserPlaylist.where(user_id: current_user).empty?
       playlists = Playlist.all
@@ -9,8 +10,8 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       end
     end
 
-    timeslots = Timeslot.all
     user_playlists = UserPlaylist.all
+    timeslots = Timeslot.all
 
 
     if CustomPlaylistTimeslot.all.empty?
@@ -26,11 +27,32 @@ class Api::V1::CustomPlaylistsController < ApplicationController
       end
     end
 
+    first_timeslots = Timeslot.first(6)
+    second_timeslots = Timeslot.last(6)
 
     first_custom_playlist_timeslots = CustomPlaylistTimeslot.first(6)
     second_custom_playlist_timeslots = CustomPlaylistTimeslot.last(6)
 
-    render json: {user_playlists: user_playlists, timeslots: timeslots, first_custom_playlist_timeslots: first_custom_playlist_timeslots, second_custom_playlist_timeslots: second_custom_playlist_timeslots }
+    timeslots_array =
+      [
+        first_timeslots[0],
+        first_timeslots[1],
+        first_timeslots[2],
+        first_timeslots[3],
+        first_timeslots[4],
+        first_timeslots[5],
+      ]
+    second_timeslots_array =
+    [
+      second_timeslots[0],
+      second_timeslots[1],
+      second_timeslots[2],
+      second_timeslots[3],
+      second_timeslots[4],
+      second_timeslots[5],
+    ]
+
+    render json: {user_playlists: user_playlists, first_timeslots: first_timeslots, second_timeslots: second_timeslots, first_custom_playlist_timeslots: first_custom_playlist_timeslots, second_custom_playlist_timeslots: second_custom_playlist_timeslots, timeslots_array: timeslots_array, second_timeslots_array: second_timeslots_array }
   end
 
   def new
