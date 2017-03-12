@@ -32,7 +32,7 @@ $(document).ready(function(){
   else if (hour >= 18 && hour < 20)
     document.body.className = "evening";
   else if (hour >= 20 || hour < 24)
-    document.body.className = "night_1";
+    document.body.className = "night_2";
   else if (hour >= 0 && hour < 4)
-	  document.body.className = "night_2";
+	  document.body.className = "night_1";
 });

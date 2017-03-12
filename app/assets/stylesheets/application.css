@@ -347,7 +347,7 @@ ul {
 }
 
 .evening {
-  min-height:1000px;
+  min-height:1200px;
   max-height:1800px;
   background-image: url('5.Evening-austin-schmid-28822.jpg');
   background-size:cover;
@@ -372,7 +372,7 @@ ul {
   background-image: url('7.Night-med-badr-chemmaoui-53463.jpg');
   background-size:cover;
   background-repeat: no-repeat;
-  background-position: 30% 80%;
+  background-position: 1%;
   height:100%;
 }
 
