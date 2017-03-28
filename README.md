@@ -16,7 +16,7 @@ Users can also use a Manual mode to select any playlist from a dropdown.
 ![alt text](http://i.imgur.com/619bQpW.jpg)
 
 Registered users can also create a custom schedule to accommodate their daily activities or moods.
-![alt text](http://i.imgur.com/xM23yHN.png)
+![alt text](http://i.imgur.com/9fAgGnh.jpg)
 
 Users can also leave feedback on existing playlists.
 ![alt text](http://i.imgur.com/dgPLTAe.jpg)
