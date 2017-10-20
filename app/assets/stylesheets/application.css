@@ -263,6 +263,12 @@ ul {
   line-height: .95;
 }
 
+.schedule {
+  background-position: center;
+  margin: auto;
+}
+
+
 .title {
   font-family: 'Ostrich Sans', 'Futura', "Trebuchet MS", Arial, sans-serif;
   font-weight: bold;
@@ -416,9 +422,4 @@ ul {
   width: 500px;
   background-size: 100%;
   padding: 30px 10px 30px 10px;
-}
-
-#schedule {
-  background-position: center;
-  margin: auto;
 }
